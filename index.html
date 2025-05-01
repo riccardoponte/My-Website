@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- Default language attribute changed to Italian -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riccardo Ponte - AI & Marketing</title>
+    <meta name="description" content="Portfolio of Riccardo Ponte, an AI Master's student specializing in Generative AI and Marketing, based in Milan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        /* --- START OF EMBEDDED CSS --- */
+
+        /* --- Base Styles & Variables (Dark Mode Default) --- */
+        :root {
+            /* Site Variables */
+            --background-color: #000000;
+            --text-color: rgba(255, 255, 255, 0.9);
+            --text-muted-color: rgba(255, 255, 255, 0.6);
+            --accent-color: #ffffff;
+            --secondary-accent-color: #814fff;
+            --border-color: rgba(255, 255, 255, 0.07);
+            --card-bg-color: #141414;
+            --header-bg-color: rgba(8, 9, 10, 0.75);
+            --green-accent-color: #31EE33;
+            --button-text-color: var(--background-color);
+            --button-hover-bg: #ccc;
+            --profile-img-filter: contrast(1.08) grayscale(1);
+            --about-img-filter: contrast(1.08) grayscale(1);
+            --animated-bg-opacity: 0.65;
+            --heading-font: 'Inter', sans-serif;
+            --body-font: 'Inter', sans-serif;
+            --serif-font: 'Instrument Serif', serif;
+            --container-padding: 40px;
+            --section-padding: 100px 0;
+
+            /* -- Chatbot Dark Theme Colors -- */
+            --chatbot-dark-bg: #18181b;
+            --chatbot-dark-text: rgba(255, 255, 255, 0.9);
+            --chatbot-dark-muted-text: rgba(255, 255, 255, 0.6);
+            --chatbot-dark-border: rgba(255, 255, 255, 0.1);
+            --chatbot-dark-bot-msg-bg: #27272a;
+            --chatbot-dark-bot-msg-text: var(--chatbot-dark-text);
+            --chatbot-dark-primary: var(--chatbot-dark-bot-msg-bg); /* Use bot msg bg */
+            --chatbot-dark-user-msg-text: #ffffff;
+            --chatbot-dark-input-bg: #000000;
+        }
+
+        /* --- Light Mode Variables --- */
+        body.light-mode {
+            /* Site Variables */
+            --background-color: #f4f4f5;
+            --text-color: rgba(0, 0, 0, 0.9);
+            --text-muted-color: rgba(0, 0, 0, 0.6);
+            --accent-color: #000000;
+            --secondary-accent-color: #6a1fff;
+            --border-color: rgba(0, 0, 0, 0.09);
+            --card-bg-color: #ffffff;
+            --header-bg-color: rgba(255, 255, 255, 0.8);
+            --green-accent-color: #28a745;
+            --button-text-color: var(--background-color);
+            --button-hover-bg: #333;
+            --profile-img-filter: none;
+            --about-img-filter: none;
+            --animated-bg-opacity: 0.35;
+
+            /* -- Chatbot Light Theme Colors -- */
+            --chatbot-light-bg: #ffffff;
+            --chatbot-light-text: rgba(0, 0, 0, 0.9);
+            --chatbot-light-muted-text: rgba(0, 0, 0, 0.6);
+            --chatbot-light-border: rgba(0, 0, 0, 0.09);
+            --chatbot-light-bot-msg-bg: #f0f0f0;
+            --chatbot-light-bot-msg-text: var(--chatbot-light-text);
+            --chatbot-light-primary: var(--chatbot-light-bot-msg-bg); /* Use bot msg bg */
+            --chatbot-light-user-msg-text: #000000; /* Black text for contrast */
+            --chatbot-light-input-bg: #ffffff;
+
+            /* Specific Site Overrides for Light Mode (unchanged) */
+            .cta-button { background-color: var(--accent-color); color: #ffffff; }
+            .cta-button:hover { background-color: #333; }
+            .contact-cta .cta-button { background-color: var(--card-bg-color); color: var(--text-color); border: 1px solid var(--border-color); }
+            .contact-cta .cta-button:hover { background-color: #eee; color: var(--accent-color); }
+            .skill-tag { background-color: #e9ecef; color: var(--text-muted-color); border-color: rgba(0, 0, 0, 0.1); }
+            .skill-tag:hover { background-color: #dee2e6; color: var(--text-color); }
+            .available-badge { background-color: rgba(0, 0, 0, 0.03); border-color: var(--border-color); color: var(--text-muted-color); }
+            .availability-dot { background-color: var(--green-accent-color); box-shadow: 0 0 8px 1px rgba(40, 167, 69, 0.4); }
+            .site-header { border-bottom-color: var(--border-color); }
+            .footer-bottom, .experience-list, .site-footer { border-top-color: var(--border-color); }
+            .experience-item { border-bottom-color: var(--border-color); }
+            .testimonial-item, .about-image-card, .skills-grid { border-color: var(--border-color); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+            .profile-animation-bg { opacity: var(--animated-bg-opacity); background: conic-gradient(from 0deg at 50% 50%, rgba(106, 31, 255, 0.4), rgba(40, 167, 69, 0.3), rgba(0, 0, 0, 0.2), rgba(106, 31, 255, 0.4)); filter: blur(15px); }
+            .about-image-card img { filter: var(--about-img-filter); }
+        }
+
+        /* --- General Styles (unchanged) --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--background-color); color: var(--text-color); font-family: var(--body-font); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; transition: background-color 0.3s ease, color 0.3s ease; }
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--container-padding); }
+        a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--accent-color); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        h1, h2, h3, h4 { font-family: var(--heading-font); font-weight: 500; line-height: 1.2; color: var(--text-color); transition: color 0.3s ease; }
+        h1 { font-size: clamp(40px, 6vw, 48px); } h2 { font-size: clamp(32px, 5vw, 44px); } h3 { font-size: clamp(24px, 4vw, 28px); } h4 { font-size: clamp(18px, 3vw, 22px); }
+        p { color: var(--text-muted-color); font-size: 16px; line-height: 1.6; transition: color 0.3s ease; }
+        em { font-family: var(--serif-font); font-style: italic; font-weight: 400; color: var(--text-muted-color); }
+        .small-heading { display: inline-flex; align-items: center; gap: 16px; border-radius: 123px; border: 1px solid var(--border-color); padding: 0 24px; height: auto; min-height: 36px; line-height: 34px; margin-bottom: 16px; background: linear-gradient(180deg, var(--card-bg-color) 0%, var(--border-color) 100%); transition: background-color 0.3s ease, border-color 0.3s ease; }
+        .small-heading p em { font-family: var(--body-font); font-style: normal; font-size: 14px; font-weight: 500; color: var(--text-muted-color); display: block; line-height: inherit; transition: color 0.3s ease;}
+        .small-heading::before, .small-heading::after { content: ''; height: 1px; width: 69px; opacity: 0.5; }
+        .small-heading::before { background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, var(--accent-color) 100%); }
+        .small-heading::after { background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, var(--accent-color) 100%); }
+        .section-heading { max-width: 600px; margin: 0 auto 40px; text-align: center; }
+        .section-heading h2 { margin-bottom: 16px; }
+        .section-heading p { max-width: 75%; margin: 0 auto; }
+
+        /* --- Header / Navigation (unchanged) --- */
+        .site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; backdrop-filter: blur(12px); background-color: var(--header-bg-color); border-bottom: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease; }
+        .main-nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+        .portfolio-label { font-size: 14px; font-weight: bold; color: var(--text-color); margin-right: 16px; transition: color 0.3s ease; }
+        .logo { display: block; width: 80px; height: 39px; flex-shrink: 0; text-indent: -9999px; }
+        .nav-links { display: flex; gap: 16px; align-items: center; }
+        .nav-link { font-size: 14px; font-weight: 400; color: var(--text-muted-color); padding: 6px 12px; position: relative; transition: color 0.3s ease; }
+        .nav-link:hover, .nav-link.current { color: var(--text-color); }
+        .nav-action-button { background: none; border: none; color: var(--text-muted-color); cursor: pointer; font-size: 14px; padding: 6px 8px; margin-left: 8px; transition: color 0.3s ease; font-weight: 500; }
+        .nav-action-button:hover { color: var(--text-color); }
+        #dark-mode-toggle { font-size: 18px; line-height: 1; }
+        .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; z-index: 101; }
+        .mobile-nav-toggle span { display: block; width: 22px; height: 2px; background-color: var(--text-color); margin: 5px 0; transition: all 0.3s ease-in-out, background-color 0.3s ease; }
+
+        /* --- Hero Section (unchanged) --- */
+        .hero-section { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding-top: 180px; padding-bottom: 60px; position: relative; overflow: hidden; text-align: center; }
+        .hero-text-content { position: relative; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 600px; margin: 0 auto; }
+        .profile-animation-bg { position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 186px; height: 186px; border-radius: 50%; z-index: 3; background: conic-gradient( from 0deg at 50% 50%, rgba(129, 79, 255, 0.5), rgba(49, 238, 51, 0.4), rgba(255, 255, 255, 0.3), rgba(129, 79, 255, 0.5) ); animation: spin 8s linear infinite; filter: blur(12px); opacity: var(--animated-bg-opacity); transition: opacity 0.3s ease, background 0.3s ease; }
+        @keyframes spin { from { transform: translateX(-50%) rotate(0deg); } to { transform: translateX(-50%) rotate(360deg); } }
+        .profile-picture { width: 176px; height: 176px; border-radius: 50%; overflow: hidden; position: relative; margin-bottom: 24px; z-index: 5; border: 4px solid var(--background-color); box-shadow: 0 2px 20px rgba(92, 93, 94, 0.5); flex-shrink: 0; transition: border-color 0.3s ease;}
+        .profile-picture img { width: 100%; height: 100%; object-fit: cover; filter: var(--profile-img-filter); transition: filter 0.3s ease; }
+        .hero-text-content h1 { margin-bottom: 8px; order: 3; }
+        .hero-text-content p { margin-bottom: 24px; order: 4; }
+        .available-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background-color: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 20px; font-size: 14px; color: var(--text-muted-color); margin-bottom: 16px; order: 2; position: relative; z-index: 4; transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+        .availability-dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--green-accent-color); box-shadow: 0 0 10px 1px color-mix(in srgb, var(--green-accent-color), transparent 50%); transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+        .hero-social-links { display: flex; gap: 16px; align-items: center; margin-top: 16px; order: 5; position: relative; z-index: 4; }
+        .hero-social-links .social-separator { width: 1px; height: 18px; background-color: var(--border-color); transition: background-color 0.3s ease; }
+        .hero-social-links a { opacity: 0.5; transition: opacity 0.3s ease, color 0.3s ease; font-size: 14px; color: var(--text-muted-color); }
+        .hero-social-links a:hover { opacity: 1; color: var(--text-color); }
+        .scroll-down-arrow { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 5; animation: bounce 2s infinite; color: var(--text-muted-color); transition: color 0.3s ease;}
+        .scroll-down-arrow svg { width: 25px; height: 25px; stroke: currentColor; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+        .hero-gradient-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--background-color) 20%, transparent 100%); z-index: 2; pointer-events: none; transition: background 0.3s ease; }
+
+        /* --- About Section (unchanged) --- */
+        .about-section { background-color: var(--background-color); padding: var(--section-padding); position: relative; overflow: hidden; transition: background-color 0.3s ease; }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px; align-items: start; }
+        .about-heading-content { display: flex; flex-direction: column; gap: 24px; }
+        .about-heading-content .section-heading { text-align: left; margin-left: 0; margin-right: 0; max-width: 100%; margin-bottom: 0; }
+        .about-heading-content .section-heading .small-heading { justify-content: flex-start; }
+        .about-heading-content .section-heading p { max-width: 100%; margin: 0; }
+        .about-image-card { background-color: var(--card-bg-color); border-radius: 14px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .about-image-card img { aspect-ratio: 1 / 1.1; object-fit: cover; filter: var(--about-img-filter); transition: filter 0.3s ease; }
+
+        /* --- Skills Section (unchanged) --- */
+        .skills-section { background-color: var(--background-color); padding: var(--section-padding); transition: background-color 0.3s ease; }
+        .skills-experience-container { display: flex; flex-direction: column; gap: 48px; max-width: 1240px; margin: 60px auto 0; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; background-color: var(--card-bg-color); padding: 48px 32px; border-radius: 16px; border: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .skill-tag { background-color: var(--background-color); color: var(--text-muted-color); font-size: 14px; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-color); transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; cursor: default; }
+        .skill-tag:hover { background-color: color-mix(in srgb, var(--card-bg-color), var(--text-color) 10%); color: var(--text-color); }
+        .experience-list { width: 100%; border-top: 1px solid var(--border-color); transition: border-color 0.3s ease; }
+        .experience-item { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 32px 0; border-bottom: 1px solid var(--border-color); transition: border-color 0.3s ease; }
+        .experience-item p { margin: 0; color: var(--text-muted-color); transition: color 0.3s ease; }
+        .experience-item p:first-child { color: var(--text-color); font-weight: 500; }
+        .experience-item p:last-child { text-align: right; }
+
+        /* --- Experience/Reviews Section (unchanged) --- */
+        .reviews-section { background-color: var(--background-color); padding: var(--section-padding); transition: background-color 0.3s ease; }
+        .testimonials-list { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 60px; }
+        .testimonial-item { flex: 1 1 300px; max-width: 400px; background-color: var(--card-bg-color); border-radius: 16px; padding: 32px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 20px; transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .testimonial-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background-color: #ccc; }
+        .author-name { font-size: 14px; color: var(--text-muted-color); transition: color 0.3s ease; }
+        .testimonial-item blockquote { font-size: 18px; line-height: 1.6; color: var(--text-color); margin: 0; padding: 0; transition: color 0.3s ease; }
+        .testimonial-item blockquote p { color: inherit; }
+        .testimonial-source { font-size: 14px; color: var(--text-muted-color); opacity: 0.7; margin-top: auto; transition: color 0.3s ease; }
+
+        /* --- Contact Section (unchanged) --- */
+        .contact-section { background-color: var(--background-color); padding: var(--section-padding); transition: background-color 0.3s ease; }
+        .cta-button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background-color: var(--accent-color); color: var(--button-text-color); font-weight: 500; border-radius: 30px; transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease; align-self: flex-start; border: none; cursor: pointer; }
+        .cta-button:hover { background-color: var(--button-hover-bg); transform: translateY(-2px); }
+        .cta-button svg { width: 18px; height: 18px; stroke: currentColor; fill: none; }
+        .about-heading-content .cta-button { align-self: flex-start; }
+        .contact-cta .cta-button { background-color: var(--card-bg-color); color: var(--text-color); border: 1px solid var(--border-color); }
+        .contact-cta .cta-button:hover { background-color: color-mix(in srgb, var(--card-bg-color), var(--text-color) 10%); color: var(--accent-color); }
+
+        /* --- Footer (unchanged) --- */
+        .site-footer { background-color: var(--background-color); padding-top: 80px; border-top: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease; }
+        .footer-container { display: flex; flex-direction: column; gap: 40px; }
+        .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-logo { display: block; width: 80px; height: 39px; flex-shrink: 0; text-indent: -9999px; }
+        .footer-nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-nav-link { font-size: 14px; color: var(--text-muted-color); transition: color 0.3s ease; }
+        .footer-nav-link:hover { color: var(--text-color); }
+        .social-links { display: flex; gap: 16px; }
+        .social-link { opacity: 0.6; transition: opacity 0.3s ease, color 0.3s ease; font-size: 14px; color: var(--text-muted-color); }
+        .social-link:hover { opacity: 1; color: var(--text-color); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 30px 0; border-top: 1px solid var(--border-color); transition: border-color 0.3s ease; }
+        .copyright { font-size: 14px; color: var(--text-muted-color); margin: 0; transition: color 0.3s ease; }
+
+        /* --- Animations (unchanged) --- */
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .animate-on-scroll.delay-1 { transition-delay: 0.15s; } .animate-on-scroll.delay-2 { transition-delay: 0.3s; } .animate-on-scroll.delay-3 { transition-delay: 0.45s; }
+        #hero .profile-picture.animate-on-scroll { transition-delay: 0.1s; transform: translateY(60px); } #hero .available-badge.animate-on-scroll { transition-delay: 0.2s; transform: translateY(60px); } #hero h1.animate-on-scroll { transition-delay: 0.3s; transform: translateY(60px); } #hero p.animate-on-scroll { transition-delay: 0.4s; transform: translateY(60px); } #hero .hero-social-links.animate-on-scroll { transition-delay: 0.5s; transform: translateY(60px); }
+        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+         /* --- Responsiveness (unchanged) --- */
+        @media (max-width: 1024px) { :root { --container-padding: 30px; --section-padding: 80px 0; } .about-grid { grid-template-columns: 1fr; } .experience-item { grid-template-columns: repeat(2, 1fr); } .experience-item p:last-child { text-align: left; } .footer-top { justify-content: center; text-align: center; } .footer-nav-links { justify-content: center; } .social-links { justify-content: center; } .footer-logo { margin-bottom: 20px; } }
+        @media (max-width: 767px) { :root { --container-padding: 18px; --section-padding: 60px 0; } .main-nav { height: 60px; } .nav-links { display: none; position: absolute; top: 60px; left: 0; width: 100%; background-color: var(--header-bg-color); backdrop-filter: blur(10px); flex-direction: column; padding: 20px var(--container-padding); border-top: 1px solid var(--border-color); align-items: flex-start; gap: 10px; transition: background-color 0.3s ease, border-color 0.3s ease;} .nav-links .nav-link { padding: 10px 0; width: 100%; font-size: 16px; } .nav-links .nav-action-button { padding: 10px 0; margin-left: 0; width: 100%; text-align: left; font-size: 16px; } #dark-mode-toggle { font-size: 20px; } .site-header.nav-open .nav-links { display: flex; } .mobile-nav-toggle { display: block; } .site-header.nav-open .mobile-nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .site-header.nav-open .mobile-nav-toggle span:nth-child(2) { opacity: 0; } .site-header.nav-open .mobile-nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } .hero-section { padding-top: 120px; } .profile-picture { width: 120px; height: 120px; margin-bottom: 20px; border-width: 3px;} .profile-animation-bg { width: 130px; height: 130px; top: -5px; filter: blur(10px); } h1 { font-size: clamp(32px, 8vw, 40px); } h2 { font-size: clamp(28px, 7vw, 36px); } .about-heading-content .section-heading { text-align: center; } .about-heading-content .section-heading .small-heading { justify-content: center; } .about-heading-content .cta-button { align-self: center; } .skills-grid { padding: 30px 15px; } .experience-item { grid-template-columns: 1fr; text-align: left !important; gap: 8px; padding: 24px 0; } .experience-item p:last-child { text-align: left !important; } .testimonials-list { margin-top: 40px; gap: 20px; } .testimonial-item { padding: 25px; flex-basis: 100%; max-width: none; } .contact-section .section-heading p { max-width: 90%; } .contact-cta { margin-top: 30px; } .footer-container { gap: 30px; } .footer-top, .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 25px; } .footer-nav-links, .social-links { justify-content: center; gap: 20px; } .footer-logo { margin-bottom: 0; } .footer-bottom { padding: 25px 0; } }
+
+        /* --- END OF EMBEDDED CSS --- */
+    </style>
+</head>
+<body> <!-- Starts without .light-mode class -->
+
+    <header class="site-header">
+        <nav class="main-nav container">
+            <div class="portfolio-label" data-lang-key="nav.portfolio">Portfolio</div>
+            <a href="#hero" class="logo" aria-label="Riccardo Ponte Portfolio Home"></a>
+            <ul class="nav-links">
+                <li><a href="#about-me" class="nav-link" data-lang-key="nav.about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-lang-key="nav.skills">Skills</a></li>
+                <li><a href="#experience" class="nav-link" data-lang-key="nav.experience">Experience</a></li>
+                <li><a href="#contact" class="nav-link" data-lang-key="nav.hobby">Hobby</a></li>
+                 <!-- Action Buttons -->
+                 <li><button id="translate-button" class="nav-action-button" aria-label="Translate to English">EN</button></li> <!-- Initial state: show EN -->
+                 <li><button id="dark-mode-toggle" class="nav-action-button" aria-label="Switch to Light Mode">☀️</button></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Main Sections (Hero, About, Skills, Experience, Contact) - Unchanged -->
+        <section id="hero" class="hero-section"> <div class="hero-text-content"> <div class="profile-animation-bg"></div> <div class="profile-picture animate-on-scroll"> <img src="https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg" alt="Riccardo Ponte"> </div> <div class="available-badge animate-on-scroll"> <span class="availability-dot"></span> <span data-lang-key="hero.available">available for work</span> </div> <h1 class="animate-on-scroll" data-lang-key="hero.title">I'm <em>Riccardo</em></h1> <p class="animate-on-scroll" data-lang-key="hero.subtitle">23-year-old AI Master's student based in Milan.</p> <div class="hero-social-links animate-on-scroll"> <a href="https://www.instagram.com/riccardopontee/" target="_blank" rel="noopener" aria-label="Instagram">Ig</a> <span class="social-separator"></span> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" target="_blank" rel="noopener" aria-label="LinkedIn">In</a> <span class="social-separator"></span> <a href="https://www.youtube.com/@riccardopontee" target="_blank" rel="noopener" aria-label="YouTube">Yt</a> </div> </div> <a href="#about-me" class="scroll-down-arrow" aria-label="Scroll down"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> </a> <div class="hero-gradient-overlay"></div> </section>
+        <section id="about-me" class="about-section"> <div class="container about-grid"> <div class="about-heading-content animate-on-scroll"> <div class="section-heading"> <div class="small-heading"> <p><em data-lang-key="about.tag">Who is Riccardo ?</em></p> </div> <h2 data-lang-key="about.title">New <em>Generative AI Specialist</em></h2> </div> <p data-lang-key="about.p1">I am an analytical, creative, and ambitious individual with a strong passion for the world of Generative AI and social media marketing.</p> <p data-lang-key="about.p2">Graduated in Corporate Communication and Public Relations, I am currently pursuing a Master's degree in Artificial Intelligence at IULM University.</p> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="cta-button" target="_blank" rel="noopener"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="1.5"/> <path d="M6.38 6.38L17.62 17.62M17.62 6.38L6.38 17.62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M17 8C17.5523 8 18 7.55228 18 7C18 6.44772 17.5523 6 17 6C16.4477 6 16 6.44772 16 7C16 7.55228 16.4477 8 17 8Z" fill="currentColor"/> <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/> </svg> <span data-lang-key="about.button">Read More on LinkedIn</span> </a> </div> <div class="about-image-card animate-on-scroll delay-1"> <img src="https://i.postimg.cc/T3X0SK6Q/def.jpg" alt="Riccardo Ponte working on a project"> </div> </div> </section>
+        <section id="skills" class="skills-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="skills.tag">Skills & Education</em></p> </div> </div> <div class="skills-experience-container"> <div class="skills-grid animate-on-scroll delay-1"> <span class="skill-tag" data-lang-key="skills.skill1">Digital Strategy</span> <span class="skill-tag" data-lang-key="skills.skill2">Corporate Communication</span> <span class="skill-tag" data-lang-key="skills.skill3">Content Marketing</span> <span class="skill-tag" data-lang-key="skills.skill4">Generative AI</span> <span class="skill-tag" data-lang-key="skills.skill5">Social Media Management</span> <span class="skill-tag">Excel</span> <span class="skill-tag" data-lang-key="skills.skill7">No Code</span> <span class="skill-tag" data-lang-key="skills.skill8">Automation Tools</span> <span class="skill-tag" data-lang-key="skills.skill9">Microsoft Office</span> </div> <div class="experience-list animate-on-scroll delay-2"> <div class="experience-item"> <p data-lang-key="skills.edu1.title">Master's Degree</p> <p data-lang-key="skills.edu1.desc">Artificial Intelligence for Marketing</p> <p>2023 – 2025</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu2.title">Bachelor's Degree</p> <p data-lang-key="skills.edu2.desc">Corporate Communication & Public Relations</p> <p>2020 – 2023</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu3.title">Internship</p> <p data-lang-key="skills.edu3.desc">English Language Certification</p> <p>07/2019</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu4.title">Diploma</p> <p data-lang-key="skills.edu4.desc">International Relations, Finance & Marketing</p> <p data-lang-key="skills.edu4.date">Academic Year 2019/20</p> </div> </div> </div> </div> </section>
+        <section id="experience" class="reviews-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="experience.tag">Resume</em></p> </div> <h2 data-lang-key="experience.title">Working <em>Experience</em></h2> </div> <div class="testimonials-list"> <article class="testimonial-item animate-on-scroll"> <div class="testimonial-author"> <img src="https://unacom.it/wp-content/uploads/2022/03/havas_milan_logo.jpg" alt="Havas Milan Logo"> <span class="author-name">Havas Milan</span> </div> <blockquote> <p data-lang-key="experience.job1.desc">Currently transforming raw analytics into actionable strategies and insights.</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job1.title">Client Data Assistant</span> </article> <article class="testimonial-item animate-on-scroll delay-1"> <div class="testimonial-author"> <img src="data:image/png;base64,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" alt="Zucchi 39 Logo"> <span class="author-name">Zucchi 39</span> </div> <blockquote> <p data-lang-key="experience.job2.desc">Programmed AI chatbots, optimized SEO strategies using relevant tools, and performed data analysis.</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job2.title">AI & SEO Specialist</span> </article> <article class="testimonial-item animate-on-scroll delay-2"> <div class="testimonial-author"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7i0r3e1-I_1xSTZOWKbFC1_zhKBSeqP4Rx5GdVhw1lQhasfzb19PozqV_6xHccPRgOqg&usqp=CAU" alt="IULM University Logo"> <span class="author-name">IULM University</span> </div> <blockquote> <p data-lang-key="experience.job3.desc">Performed data analysis, efficiently queried institutional databases, and provided support to faculty and students.</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job3.title">University Secretary</span> </article> </div> </div> </section>
+        <section id="contact" class="contact-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="hobby.tag">Hobby</em></p> </div> <h2 data-lang-key="hobby.title">YouTube <em>Channel</em></h2> <p data-lang-key="hobby.desc">On my channel, I focus on creating personalized graphics and soccer-themed YouTube shorts.</p> </div> <div class="contact-cta animate-on-scroll delay-1" style="text-align: center; margin-top: 40px;"> <a href="https://www.youtube.com/@riccardopontee" class="cta-button" style="margin: 0 auto; display: inline-flex;" target="_blank" rel="noopener"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M21.1014 6.50008C20.941 5.37452 20.2761 4.39961 19.3294 3.8045C18.1854 3.07661 16.7131 2.81873C15.3588 2.83342C13.4751 2.84569C11.5249 2.84569C9.64116 2.83342C8.28687 2.81873C6.81461 3.07661C5.67059 3.8045C4.72387 4.39961C4.05898 5.37452C3.89862 6.50008C3.64503 8.44493C3.64503 10.5551C3.89862 12.5C4.05898 13.6255C4.72387 14.6004C5.67059 15.1955C6.81461 15.9234C8.28687 16.1813C9.64116 16.1666C11.5249 16.1543C13.4751 16.1543C15.3588 16.1666C16.7131 16.1813C18.1854 15.9234C19.3294 15.1955C20.2761 14.6004C20.941 13.6255C21.1014 12.5C21.355 10.5551C21.355 8.44493C21.1014 6.50008Z" stroke="currentColor" stroke-width="1.5"/> <path d="M10 12.5V6.5L15 9.5L10 12.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg> <span data-lang-key="hobby.button">Visit YouTube Channel</span> </a> </div> </div> </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <a href="#hero" class="footer-logo" aria-label="Riccardo Ponte Portfolio Home"></a>
+                <ul class="footer-nav-links">
+                    <li><a href="#about-me" class="footer-nav-link" data-lang-key="nav.about">About</a></li>
+                    <li><a href="#skills" class="footer-nav-link" data-lang-key="nav.skills">Skills</a></li>
+                    <li><a href="#experience" class="footer-nav-link" data-lang-key="nav.experience">Experience</a></li>
+                    <li><a href="#contact" class="footer-nav-link" data-lang-key="nav.hobby">Hobby</a></li>
+                </ul>
+                <div class="social-links">
+                     <a href="https://www.instagram.com/riccardopontee/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
+                    <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">In</a>
+                    <a href="https://www.youtube.com/@riccardopontee" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">Yt</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright" data-lang-key="footer.copyright">© 2024 Riccardo Ponte. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import Flowise Embed Library (loaded once) -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script>
+
+    <script>
+        // --- START OF EMBEDDED JAVASCRIPT ---
+
+        let ChatbotInstance;
+        // Initialize based on HTML tag, which is now 'it'
+        let currentLanguage = document.documentElement.lang || 'it'; // Default to 'it' if somehow unset
+
+        // --- Translations ---
+        const siteTranslations = { /* (Same as before) */
+            en: { "nav.portfolio": "Portfolio", "nav.about": "About", "nav.skills": "Skills", "nav.experience": "Experience", "nav.hobby": "Hobby", "hero.available": "available for work", "hero.title": "I'm <em>Riccardo</em>", "hero.subtitle": "23-year-old AI Master's student based in Milan.", "about.tag": "Who is Riccardo ?", "about.title": "New <em>Generative AI Specialist</em>", "about.p1": "I am an analytical, creative, and ambitious individual with a strong passion for the world of Generative AI and social media marketing.", "about.p2": "Graduated in Corporate Communication and Public Relations, I am currently pursuing a Master's degree in Artificial Intelligence at IULM University.", "about.button": "Read More on LinkedIn", "skills.tag": "Skills & Education", "skills.skill1": "Digital Strategy", "skills.skill2": "Corporate Communication", "skills.skill3": "Content Marketing", "skills.skill4": "Generative AI", "skills.skill5": "Social Media Management", "skills.skill7": "No Code", "skills.skill8": "Automation Tools", "skills.skill9": "Microsoft Office", "skills.edu1.title": "Master's Degree", "skills.edu1.desc": "Artificial Intelligence for Marketing", "skills.edu2.title": "Bachelor's Degree", "skills.edu2.desc": "Corporate Communication & Public Relations", "skills.edu3.title": "Internship", "skills.edu3.desc": "English Language Certification", "skills.edu4.title": "Diploma", "skills.edu4.desc": "International Relations, Finance & Marketing", "skills.edu4.date": "Academic Year 2019/20", "experience.tag": "Resume", "experience.title": "Working <em>Experience</em>", "experience.job1.desc": "Currently transforming raw analytics into actionable strategies and insights.", "experience.job1.title": "Client Data Assistant", "experience.job2.desc": "Programmed AI chatbots, optimized SEO strategies using relevant tools, and performed data analysis.", "experience.job2.title": "AI & SEO Specialist", "experience.job3.desc": "Performed data analysis, efficiently queried institutional databases, and provided support to faculty and students.", "experience.job3.title": "University Secretary", "hobby.tag": "Hobby", "hobby.title": "YouTube <em>Channel</em>", "hobby.desc": "On my channel, I focus on creating personalized graphics and soccer-themed YouTube shorts.", "hobby.button": "Visit YouTube Channel", "footer.copyright": "© 2024 Riccardo Ponte. All rights reserved." },
+            it: { "nav.portfolio": "Portfolio", "nav.about": "Chi Sono", "nav.skills": "Competenze", "nav.experience": "Esperienza", "nav.hobby": "Hobby", "hero.available": "disponibile a collaborare", "hero.title": "Sono <em>Riccardo</em>", "hero.subtitle": "Studente magistrale di 23 anni in AI, abito a Milano.", "about.tag": "Chi è Riccardo?", "about.title": "Specialista <em>Generative AI</em> Nuovo", "about.p1": "Sono una persona analitica, creativa e ambiziosa con una forte passione per il mondo dell'AI Generativa e del social media marketing.", "about.p2": "Laureato in Comunicazione d'Impresa e Relazioni Pubbliche, sto attualmente frequentando il corso di laurea magistrale in Intelligenza Artificiale presso l'Università IULM.", "about.button": "Leggi di più su LinkedIn", "skills.tag": "Competenze e Formazione", "skills.skill1": "Strategia Digitale", "skills.skill2": "Comunicazione d'Impresa", "skills.skill3": "Content Marketing", "skills.skill4": "AI Generativa", "skills.skill5": "Gestione Social Media", "skills.skill7": "No Code", "skills.skill8": "Strumenti di Automazione", "skills.skill9": "Microsoft Office", "skills.edu1.title": "Laurea Magistrale", "skills.edu1.desc": "Intelligenza Artificiale per il Marketing", "skills.edu2.title": "Laurea Triennale", "skills.edu2.desc": "Comunicazione d'Impresa e Relazioni Pubbliche", "skills.edu3.title": "Certificazione", "skills.edu3.desc": "Certificazione di lingua Inglese (Luglio 2019)", "skills.edu4.title": "Diploma", "skills.edu4.desc": "Relazioni Internazionali, Finanza e Marketing", "skills.edu4.date": "Anno Accademico 2019/20", "experience.tag": "Curriculum", "experience.title": "Esperienza <em>Lavorativa</em>", "experience.job1.desc": "Attualmente mi occupo di formalizzare strategie di marketing data driven analizzando gli insight dei clienti.", "experience.job1.title": "Client Data Assistant", "experience.job2.desc": "Ho programmato chatbot AI, ottimizzato strategie SEO usando strumenti specifici ed eseguito analisi dati.", "experience.job2.title": "Specialista AI & SEO", "experience.job3.desc": "Mi sono occupato dell'analisi dati su Excel, della consultazione di banche dati e dell'assistenza docenti/studenti.", "experience.job3.title": "Segreteria Studenti", "hobby.tag": "Hobby", "hobby.title": "Canale <em>YouTube</em>", "hobby.desc": "Sul mio canale mi concentro sulla creazione di grafiche personalizzate e shorts YouTube a tema calcistico.", "hobby.button": "Visita Canale YouTube", "footer.copyright": "© 2024 Riccardo Ponte. Tutti i diritti riservati." }
+        };
+        const chatbotTranslations = {
+            en: {
+                title: 'Riccardo', welcomeMessage: 'Hi there :) Welcome to my site! ', placeholder: 'Ask me something...',
+                errorMessage: 'Sorry, an error occurred. Please try again.', sourceDocsTitle: 'Sources:',
+                starterPrompts: ["Who are you?", "What do you study?"],
+                tooltipMessage: 'Let\'s talk👇'
+            },
+            it: {
+                title: 'Riccardo', welcomeMessage: 'Ciao :) Benvenuto sul mio sito!', placeholder: 'Chiedimi qualcosa...',
+                errorMessage: 'Spiacente, si è verificato un errore. Riprova.', sourceDocsTitle: 'Fonti:',
+                starterPrompts: ["Chi sei?", "Cosa studi?"],
+                tooltipMessage: 'Parliamo👇'
+            }
+        };
+
+        // --- Define Chatbot Base Themes --- (unchanged)
+        const chatbotBaseThemeSettings = { 
+            button: { 
+                right: 20, 
+                bottom: 20, 
+                size: 48, 
+                dragAndDrop: false, // Disable drag-and-drop
+                customIconSrc: 'https://i.postimg.cc/yx6bX5Cs/Bolla-di-parlare-con-stella.png', // Updated icon
+                autoWindowOpen: { autoOpen: false }, // Disable auto-opening
+                // Add background effect to the chatbot bubble
+                customStyles: {
+                    boxShadow: '0 0 20px rgba(129, 79, 255, 0.5), 0 0 30px rgba(49, 238, 51, 0.4), 0 0 40px rgba(255, 255, 255, 0.3)',
+                    background: 'conic-gradient(from 0deg at 50% 50%, rgba(129, 79, 255, 0.5), rgba(49, 238, 51, 0.4), rgba(255, 255, 255, 0.3), rgba(129, 79, 255, 0.5))',
+                    filter: 'blur(12px)',
+                }
+            },
+            tooltip: { showTooltip: true, tooltipBackgroundColor: '#000000', tooltipTextColor: '#ffffff', tooltipFontSize: 16 },
+            chatWindow: {
+                showTitle: true, 
+                showAgentMessages: true, 
+                titleAvatarSrc: 'https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg', 
+                height: 550.40, // Updated height
+                width: 400, 
+                fontSize: 16, 
+                starterPromptFontSize: 15, 
+                clearChatOnReload: false, 
+                renderHTML: true,
+                botMessage: { 
+                    showAvatar: true, 
+                    avatarSrc: 'https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg' 
+                },
+                userMessage: { showAvatar: true, avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png' },
+                textInput: { maxChars: 150, maxCharsWarningMessage: 'Character limit exceeded.', autoFocus: true, sendMessageSound: false, receiveMessageSound: false },
+                dateTimeToggle: { date: true, time: true },
+                footer: { text: 'Powered by', company: 'Riccardo', companyLink: 'https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217' }
+            }
+        };
+        const chatbotDarkTheme = { 
+            button: { 
+                ...chatbotBaseThemeSettings.button, 
+                backgroundColor: 'var(--chatbot-dark-primary)', 
+                iconColor: 'var(--chatbot-dark-user-msg-text)', 
+            }, 
+            tooltip: chatbotBaseThemeSettings.tooltip, 
+            chatWindow: { 
+                ...chatbotBaseThemeSettings.chatWindow, 
+                backgroundColor: 'var(--chatbot-dark-bg)', 
+                botMessage: { 
+                    ...chatbotBaseThemeSettings.chatWindow.botMessage, 
+                    backgroundColor: 'var(--chatbot-dark-bot-msg-bg)', 
+                    textColor: 'var(--chatbot-dark-bot-msg-text)', 
+                }, 
+                userMessage: { 
+                    ...chatbotBaseThemeSettings.chatWindow.userMessage, 
+                    backgroundColor: 'var(--chatbot-dark-primary)', 
+                    textColor: 'var(--chatbot-dark-user-msg-text)', 
+                }, 
+                textInput: { 
+                    ...chatbotBaseThemeSettings.chatWindow.textInput, 
+                    backgroundColor: 'var(--chatbot-dark-input-bg)', 
+                    textColor: 'var(--chatbot-dark-text)', 
+                    sendButtonColor: 'var(--chatbot-dark-primary)', 
+                }, 
+                feedback: { color: 'var(--chatbot-dark-muted-text)' }, 
+                footer: { 
+                    ...chatbotBaseThemeSettings.chatWindow.footer, 
+                    textColor: 'var(--chatbot-dark-muted-text)', 
+                } 
+            } 
+        };
+        const chatbotLightTheme = { 
+            button: { 
+                ...chatbotBaseThemeSettings.button, 
+                backgroundColor: 'var(--chatbot-light-primary)', 
+                iconColor: 'var(--chatbot-light-user-msg-text)', 
+            }, 
+            tooltip: chatbotBaseThemeSettings.tooltip, 
+            chatWindow: { 
+                ...chatbotBaseThemeSettings.chatWindow, 
+                backgroundColor: 'var(--chatbot-light-bg)', 
+                botMessage: { 
+                    ...chatbotBaseThemeSettings.chatWindow.botMessage, 
+                    backgroundColor: 'var(--chatbot-light-bot-msg-bg)', 
+                    textColor: 'var(--chatbot-light-bot-msg-text)', 
+                }, 
+                userMessage: { 
+                    ...chatbotBaseThemeSettings.chatWindow.userMessage, 
+                    backgroundColor: 'var(--chatbot-light-primary)', 
+                    textColor: 'var(--chatbot-light-user-msg-text)', 
+                }, 
+                textInput: { 
+                    ...chatbotBaseThemeSettings.chatWindow.textInput, 
+                    backgroundColor: 'var(--chatbot-light-input-bg)', 
+                    textColor: 'var(--chatbot-light-text)', 
+                    sendButtonColor: 'var(--chatbot-light-primary)', 
+                }, 
+                feedback: { color: 'var(--chatbot-light-muted-text)' }, 
+                footer: { 
+                    ...chatbotBaseThemeSettings.chatWindow.footer, 
+                    textColor: 'var(--chatbot-light-muted-text)', 
+                } 
+            } 
+        };
+
+
+        // --- Function to Initialize/Re-initialize Chatbot --- (unchanged)
+        function initializeChatbot() {
+            if (!ChatbotInstance) { console.warn("Chatbot library not loaded yet."); return; }
+            const existingChatbotElement = document.querySelector('flowise-chatbot');
+            if (existingChatbotElement) { try { existingChatbotElement.remove(); } catch (e) { console.error("Error removing existing chatbot:", e); } }
+            const isLightMode = document.body.classList.contains('light-mode');
+            const visualThemeBase = isLightMode ? JSON.parse(JSON.stringify(chatbotLightTheme)) : JSON.parse(JSON.stringify(chatbotDarkTheme));
+            const langStrings = chatbotTranslations[currentLanguage] || chatbotTranslations['it']; // Default to Italian if language not found
+
+            // Merge Language Strings
+            visualThemeBase.chatWindow.title = langStrings.title;
+            visualThemeBase.chatWindow.welcomeMessage = langStrings.welcomeMessage;
+            visualThemeBase.chatWindow.errorMessage = langStrings.errorMessage;
+            visualThemeBase.chatWindow.sourceDocsTitle = langStrings.sourceDocsTitle;
+            visualThemeBase.chatWindow.starterPrompts = langStrings.starterPrompts;
+            visualThemeBase.chatWindow.textInput.placeholder = langStrings.placeholder;
+            if (visualThemeBase.tooltip) { visualThemeBase.tooltip.tooltipMessage = langStrings.tooltipMessage; }
+
+            try {
+                ChatbotInstance.init({
+                    chatflowid: "7da83cdb-4ada-4c56-8c5b-8377c84af83a",
+                    apiHost: "https://flowise-production-cd0f.up.railway.app",
+                    theme: visualThemeBase
+                });
+            } catch (e) { console.error("Error initializing Flowise Chatbot:", e); }
+        }
+
+        // --- Load Flowise and Initialize --- (unchanged)
+        import("https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js")
+          .then((module) => { ChatbotInstance = module.default; initializeChatbot(); })
+          .catch(err => console.error("Failed to load Flowise module:", err));
+
+        // --- Event Listeners and Setup ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const siteHeader = document.querySelector('.site-header');
+            const navLinksContainer = document.querySelector('.nav-links');
+            const translateButton = document.getElementById('translate-button');
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+
+            // Reads 'it' from the HTML tag now
+            currentLanguage = document.documentElement.lang || 'it';
+
+            // --- Mobile Nav Toggle --- (unchanged)
+            if (mobileNavToggle && siteHeader && navLinksContainer) { mobileNavToggle.addEventListener('click', function() { siteHeader.classList.toggle('nav-open'); const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true'; mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded)); }); }
+            const allNavLinks = document.querySelectorAll('.nav-links a, .nav-links button');
+            allNavLinks.forEach(link => { link.addEventListener('click', function(e) { if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) { if (siteHeader.classList.contains('nav-open')) { siteHeader.classList.remove('nav-open'); mobileNavToggle.setAttribute('aria-expanded', 'false'); } } else if (this.tagName === 'A' && !this.getAttribute('href').startsWith('#')) { } else if (this.tagName === 'BUTTON' && siteHeader.classList.contains('nav-open')) { } }); });
+
+            setupIntersectionObserver();
+            setupSmoothScroll();
+
+            // --- Theme Toggle --- (unchanged logic)
+            body.classList.remove('light-mode');
+            darkModeToggle.textContent = '☀️';
+            darkModeToggle.setAttribute('aria-label', 'Switch to Light Mode');
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const isLightMode = body.classList.contains('light-mode');
+                darkModeToggle.textContent = isLightMode ? '🌙' : '☀️';
+                darkModeToggle.setAttribute('aria-label', isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+                initializeChatbot();
+            });
+
+            // --- Site Translation ---
+            function applySiteTranslations() {
+                document.querySelectorAll('[data-lang-key]').forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    // Use Italian as fallback if English is selected but key missing
+                    const translation = siteTranslations[currentLanguage]?.[key] || siteTranslations['it']?.[key];
+                    if (translation) { element.innerHTML = translation; }
+                });
+                document.documentElement.lang = currentLanguage;
+                // Update button text and aria-label based on the *new* current language
+                translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
+                translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
+            }
+
+            // Set initial button state (will be 'EN' because currentLanguage starts as 'it')
+            translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
+            translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
+
+            translateButton.addEventListener('click', () => {
+                currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
+                applySiteTranslations();
+                initializeChatbot();
+            });
+
+            // Apply initial site translations (this will run because lang is 'it')
+            applySiteTranslations(); // No need for the if condition anymore
+
+        }); // End DOMContentLoaded
+
+        // --- Function Definitions (Outside DOMContentLoaded) --- (unchanged)
+        function setupIntersectionObserver() { const animatedElements = document.querySelectorAll('.animate-on-scroll'); const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 }; const observerCallback = (entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }; const observer = new IntersectionObserver(observerCallback, observerOptions); animatedElements.forEach(element => observer.observe(element)); }
+        function setupSmoothScroll() { document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const targetId = this.getAttribute('href'); if (targetId === '#' || !targetId) return; try { const targetElement = document.querySelector(targetId); if (targetElement) { e.preventDefault(); targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } } catch (error) { console.error("Error finding or scrolling to element:", error); } }); }); }
+
+        // --- END OF EMBEDDED JAVASCRIPT ---
+    </script>
+
+</body>
+</html>
