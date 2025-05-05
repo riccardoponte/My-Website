@@ -290,15 +290,19 @@
         };
         const chatbotTranslations = {
             en: {
-                title: 'Riccardo', welcomeMessage: 'Hi there :) Welcome to my site! ', placeholder: 'Ask me something...',
-                errorMessage: 'Sorry, an error occurred. Please try again.', sourceDocsTitle: 'Sources:',
-                starterPrompts: ["Who are you?", "What do you study?"],
+                title: 'Riccardo',
+                welcomeMessage: 'Hi there :) Welcome to my site!',
+                placeholder: 'Ask me something...',
+                errorMessage: 'Sorry, an error occurred. Please try again.',
+                sourceDocsTitle: 'Sources:',
                 tooltipMessage: 'Let\'s talk👇'
             },
             it: {
-                title: 'Riccardo', welcomeMessage: 'Ciao :) Benvenuto sul mio sito!', placeholder: 'Chiedimi qualcosa...',
-                errorMessage: 'Spiacente, si è verificato un errore. Riprova.', sourceDocsTitle: 'Fonti:',
-                starterPrompts: ["Chi sei?", "Cosa studi?"],
+                title: 'Riccardo',
+                welcomeMessage: 'Ciao :) Benvenuto sul mio sito!',
+                placeholder: 'Chiedimi qualcosa...',
+                errorMessage: 'Spiacente, si è verificato un errore. Riprova.',
+                sourceDocsTitle: 'Fonti:',
                 tooltipMessage: 'Parliamo👇'
             }
         };
@@ -422,9 +426,11 @@
             visualThemeBase.chatWindow.welcomeMessage = langStrings.welcomeMessage;
             visualThemeBase.chatWindow.errorMessage = langStrings.errorMessage;
             visualThemeBase.chatWindow.sourceDocsTitle = langStrings.sourceDocsTitle;
-            visualThemeBase.chatWindow.starterPrompts = langStrings.starterPrompts;
             visualThemeBase.chatWindow.textInput.placeholder = langStrings.placeholder;
             if (visualThemeBase.tooltip) { visualThemeBase.tooltip.tooltipMessage = langStrings.tooltipMessage; }
+
+            // Remove starter prompts
+            delete visualThemeBase.chatWindow.starterPrompts;
 
             try {
                 ChatbotInstance.init({
