@@ -77,7 +77,7 @@
             --chatbot-light-user-msg-text: #000000; /* Black text for contrast */
             --chatbot-light-input-bg: #ffffff;
 
-            /* Specific Site Overrides for Light Mode (unchanged) */
+            /* Specific Site Overrides for Light Mode */
             .cta-button { background-color: var(--accent-color); color: #ffffff; }
             .cta-button:hover { background-color: #333; }
             .contact-cta .cta-button { background-color: var(--card-bg-color); color: var(--text-color); border: 1px solid var(--border-color); }
@@ -94,7 +94,10 @@
             .about-image-card img { filter: var(--about-img-filter); }
             .project-item:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.07); }
             .project-image-container { background-color: #e9ecef; }
-
+            
+            .social-links .social-link img { /* Makes social icons in footer black in light mode */
+                filter: invert(1);
+            }
         }
 
         /* --- General Styles (unchanged) --- */
@@ -148,6 +151,45 @@
         .hero-social-links .social-separator { width: 1px; height: 18px; background-color: var(--border-color); transition: background-color 0.3s ease; }
         .hero-social-links a { opacity: 0.5; transition: opacity 0.3s ease, color 0.3s ease; font-size: 14px; color: var(--text-muted-color); }
         .hero-social-links a:hover { opacity: 1; color: var(--text-color); }
+        .hero-social-links.animate-on-scroll {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-top: 16px;
+            order: 5;
+            position: relative;
+            z-index: 4;
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.instagram.com/riccardopontee/"] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.instagram.com/riccardopontee/"] img {
+            width: 24px;
+            height: 24px;
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217"] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217"] img {
+            width: 24px;
+            height: 24px;
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217"] img {
+            src: "https://i.postimg.cc/qRn2MgRF/Immagine-Whats-App-2025-05-09-ore-21-55-42-2f1199ca-removebg-preview.png";
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.youtube.com/@riccardopontee"] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-social-links.animate-on-scroll a[href="https://www.youtube.com/@riccardopontee"] img {
+            width: 24px;
+            height: 24px;
+        }
         .scroll-down-arrow { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 5; animation: bounce 2s infinite; color: var(--text-muted-color); transition: color 0.3s ease;}
         .scroll-down-arrow svg { width: 25px; height: 25px; stroke: currentColor; }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
@@ -280,8 +322,9 @@
         .footer-nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
         .footer-nav-link { font-size: 14px; color: var(--text-muted-color); transition: color 0.3s ease; }
         .footer-nav-link:hover { color: var(--text-color); }
-        .social-links { display: flex; gap: 16px; }
-        .social-link { opacity: 0.6; transition: opacity 0.3s ease, color 0.3s ease; font-size: 14px; color: var(--text-muted-color); }
+        .social-links { display: flex; gap: 16px; align-items: center; /* Added align-items for better vertical centering if needed */ }
+        .social-link { opacity: 0.6; transition: opacity 0.3s ease, color 0.3s ease; color: var(--text-muted-color); display: inline-flex; /* helps with alignment */ }
+        .social-link img { display: block; width: 24px; height: 24px; transition: filter 0.3s ease; /* Added transition for filter */ }
         .social-link:hover { opacity: 1; color: var(--text-color); }
         .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 30px 0; border-top: 1px solid var(--border-color); transition: border-color 0.3s ease; }
         .copyright { font-size: 14px; color: var(--text-muted-color); margin: 0; transition: color 0.3s ease; }
@@ -327,7 +370,7 @@
 
     <main>
         <!-- Main Sections (Hero, About, Skills, Experience, Contact) - Unchanged -->
-        <section id="hero" class="hero-section"> <div class="hero-text-content"> <div class="profile-animation-bg"></div> <div class="profile-picture animate-on-scroll"> <img src="https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg" alt="Riccardo Ponte"> </div> <div class="available-badge animate-on-scroll"> <span class="availability-dot"></span> <span data-lang-key="hero.available">available for work</span> </div> <h1 class="animate-on-scroll" data-lang-key="hero.title">I'm <em>Riccardo</em></h1> <p class="animate-on-scroll" data-lang-key="hero.subtitle">23-year-old AI Master's student based in Milan.</p> <div class="hero-social-links animate-on-scroll"> <a href="https://www.instagram.com/riccardopontee/" target="_blank" rel="noopener" aria-label="Instagram">Ig</a> <span class="social-separator"></span> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" target="_blank" rel="noopener" aria-label="LinkedIn">In</a> <span class="social-separator"></span> <a href="https://www.youtube.com/@riccardopontee" target="_blank" rel="noopener" aria-label="YouTube">Yt</a> </div> </div> <a href="#about-me" class="scroll-down-arrow" aria-label="Scroll down"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> </a> <div class="hero-gradient-overlay"></div> </section>
+        <section id="hero" class="hero-section"> <div class="hero-text-content"> <div class="profile-animation-bg"></div> <div class="profile-picture animate-on-scroll"> <img src="https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg" alt="Riccardo Ponte"> </div> <div class="available-badge animate-on-scroll"> <span class="availability-dot"></span> <span data-lang-key="hero.available">available for work</span> </div> <h1 class="animate-on-scroll" data-lang-key="hero.title">I'm <em>Riccardo</em></h1> <p class="animate-on-scroll" data-lang-key="hero.subtitle">23-year-old AI Master's student based in Milan.</p> <div class="hero-social-links animate-on-scroll"> <a href="https://www.instagram.com/riccardopontee/" target="_blank" rel="noopener" aria-label="Instagram"> <img src="https://sdmntprnortheu.oaiusercontent.com/files/00000000-2adc-61f4-8c6a-ed983c389959/raw?se=2025-05-09T20%3A31%3A56Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=eb780365-537d-4279-a878-cae64e33aa9c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-09T18%3A26%3A43Z&ske=2025-05-10T18%3A26%3A43Z&sks=b&skv=2024-08-04&sig=f2Oh8ge2e6rcqOmkJjdvLMhLDM7O072vmwpSzF/RhCQ%3D" alt="Instagram Icon" style="width: 24px; height: 24px;"> </a> <span class="social-separator"></span> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" target="_blank" rel="noopener" aria-label="LinkedIn"> <img src="https://i.postimg.cc/qRn2MgRF/Immagine-Whats-App-2025-05-09-ore-21-55-42-2f1199ca-removebg-preview.png" alt="LinkedIn Icon" style="width: 24px; height: 24px;"> </a> <span class="social-separator"></span> <a href="https://www.youtube.com/@riccardopontee" target="_blank" rel="noopener" aria-label="YouTube"> <img src="https://i.postimg.cc/Wb1q9fnf/Immagine-Whats-App-2025-05-09-ore-21-55-41-312618a6-removebg-preview.png" alt="YouTube Icon" style="width: 24px; height: 24px;"> </a> </div> </div> <a href="#about-me" class="scroll-down-arrow" aria-label="Scroll down"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> </a> <div class="hero-gradient-overlay"></div> </section>
         <section id="about-me" class="about-section"> <div class="container about-grid"> <div class="about-heading-content animate-on-scroll"> <div class="section-heading"> <div class="small-heading"> <p><em data-lang-key="about.tag">Who is Riccardo ?</em></p> </div> <h2 data-lang-key="about.title">New <em>Generative AI Specialist</em></h2> </div> <p data-lang-key="about.p1">I am an analytical, creative, and ambitious individual with a strong passion for the world of Generative AI and social media marketing.</p> <p data-lang-key="about.p2">Graduated in Corporate Communication and Public Relations, I am currently pursuing a Master's degree in Artificial Intelligence at IULM University.</p> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="cta-button" target="_blank" rel="noopener"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="1.5"/> <path d="M6.38 6.38L17.62 17.62M17.62 6.38L6.38 17.62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M17 8C17.5523 8 18 7.55228 18 7C18 6.44772 17.5523 6 17 6C16.4477 6 16 6.44772 16 7C16 7.55228 16.4477 8 17 8Z" fill="currentColor"/> <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/> </svg> <span data-lang-key="about.button">Read More on LinkedIn</span> </a> </div> <div class="about-image-card animate-on-scroll delay-1"> <img src="https://i.postimg.cc/T3X0SK6Q/def.jpg" alt="Riccardo Ponte working on a project"> </div> </div> </section>
         <section id="skills" class="skills-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="skills.tag">Skills & Education</em></p> </div> </div> <div class="skills-experience-container"> <div class="skills-grid animate-on-scroll delay-1"> <span class="skill-tag" data-lang-key="skills.skill1">Digital Strategy</span> <span class="skill-tag" data-lang-key="skills.skill2">Corporate Communication</span> <span class="skill-tag" data-lang-key="skills.skill3">Content Marketing</span> <span class="skill-tag" data-lang-key="skills.skill4">Generative AI</span> <span class="skill-tag" data-lang-key="skills.skill5">Social Media Management</span> <span class="skill-tag">Excel</span> <span class="skill-tag" data-lang-key="skills.skill7">No Code</span> <span class="skill-tag" data-lang-key="skills.skill8">Automation Tools</span> <span class="skill-tag" data-lang-key="skills.skill9">Microsoft Office</span> </div> <div class="experience-list animate-on-scroll delay-2"> <div class="experience-item"> <p data-lang-key="skills.edu1.title">Master's Degree</p> <p data-lang-key="skills.edu1.desc">Artificial Intelligence for Marketing</p> <p>2023 – 2025</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu2.title">Bachelor's Degree</p> <p data-lang-key="skills.edu2.desc">Corporate Communication & Public Relations</p> <p>2020 – 2023</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu3.title">Internship</p> <p data-lang-key="skills.edu3.desc">English Language Certification</p> <p>07/2019</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu4.title">Diploma</p> <p data-lang-key="skills.edu4.desc">International Relations, Finance & Marketing</p> <p data-lang-key="skills.edu4.date">Academic Year 2019/20</p> </div> </div> </div> </div> </section>
         <section id="experience" class="reviews-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="experience.tag">Resume</em></p> </div> <h2 data-lang-key="experience.title">Work <em>Experience</em></h2> </div> <div class="testimonials-list"> <article class="testimonial-item animate-on-scroll"> <div class="testimonial-author"> <img src="https://unacom.it/wp-content/uploads/2022/03/havas_milan_logo.jpg" alt="Havas Milan Logo"> <span class="author-name">Havas Milan</span> </div> <blockquote> <p data-lang-key="experience.job1.desc">Currently transforming raw analytics into actionable strategies and insights.</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job1.title">Client Data Assistant</span> </article> <article class="testimonial-item animate-on-scroll delay-1"> <div class="testimonial-author"> <img src="data:image/png;base64,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" alt="Zucchi 39 Logo"> <span class="author-name">Zucchi 39</span> </div> <blockquote> <p data-lang-key="experience.job2.desc">Programmed AI chatbots, optimized SEO strategies using relevant tools, and performed data analysis.</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job2.title">AI & SEO Specialist</span> </article> <article class="testimonial-item animate-on-scroll delay-2"> <div class="testimonial-author"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7i0r3e1-I_1xSTZOWKbFC1_zhKBSeqP4Rx5GdVhw1lQhasfzb19PozqV_6xHccPRgOqg&usqp=CAU" alt="IULM University Logo"> <span class="author-name">IULM University</span> </div> <blockquote> <p data-lang-key="experience.job3.desc">Performed data analysis, efficiently queried institutional databases, and provided support to faculty and students.</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job3.title">University Secretary</span> </article> </div> </div> </section>
@@ -362,7 +405,7 @@
                     <!-- Project Item 2 -->
                     <article class="project-item animate-on-scroll delay-1">
                         <div class="project-image-container">
-                            <img src="https://sdmntpritalynorth.oaiusercontent.com/files/00000000-8d3c-6246-9c43-271e93d9d99a/raw?se=2025-05-09T19%3A27%3A41Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=0a4a0f0c-99ac-4752-9d87-cfac036fa93f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-08T23%3A30%3A06Z&ske=2025-05-09T23%3A30%3A06Z&sks=b&skv=2024-08-04&sig=otZNeyLD7Opv%2BP29KwLlldEFAYTbaA/cVMcxE/hQV5E%3D" alt="Chatbot aziendale Thumbnail">
+                            <img src="https://sdmntpritalynorth.oaiusercontent.com/files/00000000-8d3c-6246-9c43-271e93d9d99a/raw?se=2025-05-09T20%3A31%3A56Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=eb780365-537d-4279-a878-cae64e33aa9c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-09T04%3A18%3A29Z&ske=2025-05-10T04%3A18%3A29Z&sks=b&skv=2024-08-04&sig=vDKdbalpHw5tkwKLqldXs9ufrqTs3yyV5MvE5ZH5PxE%3D" alt="Chatbot aziendale Thumbnail">
                         </div>
                         <div class="project-content">
                             <h3 data-lang-key="projects.item2.title">Chatbot aziendale</h3>
@@ -396,9 +439,15 @@
                     <li><a href="#contact" class="footer-nav-link" data-lang-key="nav.hobby">Hobby</a></li>
                 </ul>
                 <div class="social-links">
-                     <a href="https://www.instagram.com/riccardopontee/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
-                    <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">In</a>
-                    <a href="https://www.youtube.com/@riccardopontee" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">Yt</a>
+                     <a href="https://www.instagram.com/riccardopontee/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="https://sdmntprnortheu.oaiusercontent.com/files/00000000-2adc-61f4-8c6a-ed983c389959/raw?se=2025-05-09T20%3A31%3A56Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=eb780365-537d-4279-a878-cae64e33aa9c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-09T18%3A26%3A43Z&ske=2025-05-10T18%3A26%3A43Z&sks=b&skv=2024-08-04&sig=f2Oh8ge2e6rcqOmkJjdvLMhLDM7O072vmwpSzF/RhCQ%3D" alt="Instagram Icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="https://i.postimg.cc/qRn2MgRF/Immagine-Whats-App-2025-05-09-ore-21-55-42-2f1199ca-removebg-preview.png" alt="LinkedIn Icon">
+                    </a>
+                    <a href="https://www.youtube.com/@riccardopontee" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">
+                        <img src="https://i.postimg.cc/Wb1q9fnf/Immagine-Whats-App-2025-05-09-ore-21-55-41-312618a6-removebg-preview.png" alt="YouTube Icon">
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
