@@ -100,7 +100,7 @@
             }
         }
 
-        /* --- General Styles (unchanged) --- */
+        /* --- General Styles --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--background-color); color: var(--text-color); font-family: var(--body-font); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; transition: background-color 0.3s ease, color 0.3s ease; }
@@ -112,6 +112,9 @@
         h1, h2, h3, h4 { font-family: var(--heading-font); font-weight: 500; line-height: 1.2; color: var(--text-color); transition: color 0.3s ease; }
         h1 { font-size: clamp(40px, 6vw, 48px); } h2 { font-size: clamp(32px, 5vw, 44px); } h3 { font-size: clamp(24px, 4vw, 28px); } h4 { font-size: clamp(18px, 3vw, 22px); }
         p { color: var(--text-muted-color); font-size: 16px; line-height: 1.6; transition: color 0.3s ease; }
+        .about-heading-content p { margin-bottom: 1em; }
+        .about-heading-content p:last-of-type { margin-bottom: 0; }
+
         em { font-family: var(--serif-font); font-style: italic; font-weight: 400; color: var(--text-muted-color); }
         .small-heading { display: inline-flex; align-items: center; gap: 16px; border-radius: 123px; border: 1px solid var(--border-color); padding: 0 24px; height: auto; min-height: 36px; line-height: 34px; margin-bottom: 16px; background: linear-gradient(180deg, var(--card-bg-color) 0%, var(--border-color) 100%); transition: background-color 0.3s ease, border-color 0.3s ease; }
         .small-heading p em { font-family: var(--body-font); font-style: normal; font-size: 14px; font-weight: 500; color: var(--text-muted-color); display: block; line-height: inherit; transition: color 0.3s ease;}
@@ -122,7 +125,7 @@
         .section-heading h2 { margin-bottom: 16px; }
         .section-heading p { max-width: 75%; margin: 0 auto; }
 
-        /* --- Header / Navigation (unchanged) --- */
+        /* --- Header / Navigation --- */
         .site-header { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; backdrop-filter: blur(12px); background-color: var(--header-bg-color); border-bottom: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease; }
         .main-nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
         .portfolio-label { font-size: 14px; font-weight: bold; color: var(--text-color); margin-right: 16px; transition: color 0.3s ease; }
@@ -136,7 +139,7 @@
         .mobile-nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; z-index: 101; }
         .mobile-nav-toggle span { display: block; width: 22px; height: 2px; background-color: var(--text-color); margin: 5px 0; transition: all 0.3s ease-in-out, background-color 0.3s ease; }
 
-        /* --- Hero Section (unchanged) --- */
+        /* --- Hero Section --- */
         .hero-section { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding-top: 180px; padding-bottom: 60px; position: relative; overflow: hidden; text-align: center; }
         .hero-text-content { position: relative; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 600px; margin: 0 auto; }
         .profile-animation-bg { position: absolute; top: -5px; left: 50%; transform: translateX(-50%); width: 186px; height: 186px; border-radius: 50%; z-index: 3; background: conic-gradient( from 0deg at 50% 50%, rgba(129, 79, 255, 0.5), rgba(49, 238, 51, 0.4), rgba(255, 255, 255, 0.3), rgba(129, 79, 255, 0.5) ); animation: spin 8s linear infinite; filter: blur(12px); opacity: var(--animated-bg-opacity); transition: opacity 0.3s ease, background 0.3s ease; }
@@ -151,54 +154,19 @@
         .hero-social-links .social-separator { width: 1px; height: 18px; background-color: var(--border-color); transition: background-color 0.3s ease; }
         .hero-social-links a { opacity: 0.5; transition: opacity 0.3s ease, color 0.3s ease; font-size: 14px; color: var(--text-muted-color); }
         .hero-social-links a:hover { opacity: 1; color: var(--text-color); }
-        .hero-social-links.animate-on-scroll {
-            display: flex;
-            gap: 16px;
-            align-items: center;
-            margin-top: 16px;
-            order: 5;
-            position: relative;
-            z-index: 4;
-        }
-        .hero-social-links.animate-on-scroll a[href="https://www.instagram.com/riccardopontee/"] {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-social-links.animate-on-scroll a[href="https://www.instagram.com/riccardopontee/"] img {
-            width: 24px;
-            height: 24px;
-            src: url("https://i.postimg.cc/VkDHdv77/Immagine-Whats-App-2025-05-09-ore-22-15-21-148304b4-removebg-preview.png");
-        }
-        .hero-social-links.animate-on-scroll a[href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217"] {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-social-links.animate-on-scroll a[href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217"] img {
-            width: 24px;
-            height: 24px;
-        }
-        /* Removed invalid CSS rule that was here */
-        .hero-social-links.animate-on-scroll a[href="https://www.youtube.com/@riccardopontee"] {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-social-links.animate-on-scroll a[href="https://www.youtube.com/@riccardopontee"] img {
-            width: 24px;
-            height: 24px;
-        }
+        .hero-social-links.animate-on-scroll a[href="https://www.instagram.com/riccardopontee/"] img { width: 24px; height: 24px; }
+        .hero-social-links.animate-on-scroll a[href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217"] img { width: 24px; height: 24px; }
+        .hero-social-links.animate-on-scroll a[href="https://www.youtube.com/@riccardopontee"] img { width: 24px; height: 24px; }
         .scroll-down-arrow { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 5; animation: bounce 2s infinite; color: var(--text-muted-color); transition: color 0.3s ease;}
         .scroll-down-arrow svg { width: 25px; height: 25px; stroke: currentColor; }
         @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
         .hero-gradient-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, var(--background-color) 20%, transparent 100%); z-index: 2; pointer-events: none; transition: background 0.3s ease; }
 
-        /* --- About Section (unchanged) --- */
+        /* --- About Section --- */
         .about-section { background-color: var(--background-color); padding: var(--section-padding); position: relative; overflow: hidden; transition: background-color 0.3s ease; }
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 44px; align-items: start; }
-        .about-heading-content { display: flex; flex-direction: column; gap: 24px; }
-        .about-heading-content .section-heading { text-align: left; margin-left: 0; margin-right: 0; max-width: 100%; margin-bottom: 0; }
+        .about-heading-content { display: flex; flex-direction: column; gap: 24px; } /* Gap between h2 group, p1, p2, button */
+        .about-heading-content .section-heading { text-align: left; margin-left: 0; margin-right: 0; max-width: 100%; margin-bottom: 0; } /* Reset margin-bottom here for the heading group */
         .about-heading-content .section-heading .small-heading { justify-content: flex-start; }
         .about-heading-content .section-heading p { max-width: 100%; margin: 0; }
         .about-image-card { background-color: var(--card-bg-color); border-radius: 14px; overflow: hidden; position: relative; border: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
@@ -250,7 +218,7 @@
         }
         .project-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Dark mode hover shadow */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
         .project-image-container {
             width: 100%;
@@ -277,10 +245,10 @@
         .project-content h3 {
             font-size: clamp(20px, 3.5vw, 24px);
             margin-bottom: 0;
-            color: var(--text-color); /* Ensure heading color is consistent */
+            color: var(--text-color);
         }
         .project-content p {
-             color: var(--text-muted-color); /* Ensure p color is consistent */
+             color: var(--text-muted-color);
         }
         .project-tags {
             display: flex;
@@ -295,24 +263,21 @@
             gap: 10px;
             align-items: center;
         }
-        .project-link.cta-button { /* More specific selector for project links if they use cta-button */
+        .project-link.cta-button {
             padding: 10px 20px;
             font-size: 14px;
         }
-        /* Re-using .skill-tag for project tags is fine */
-        /* Re-using .cta-button for project links, possibly with a .project-link class for adjustments */
 
-
-        /* --- Contact Section (unchanged) --- */
+        /* --- Contact Section --- */
         .contact-section { background-color: var(--background-color); padding: var(--section-padding); transition: background-color 0.3s ease; }
         .cta-button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background-color: var(--accent-color); color: var(--button-text-color); font-weight: 500; border-radius: 30px; transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease; align-self: flex-start; border: none; cursor: pointer; }
         .cta-button:hover { background-color: var(--button-hover-bg); transform: translateY(-2px); }
         .cta-button svg { width: 18px; height: 18px; stroke: currentColor; fill: none; }
-        .about-heading-content .cta-button { align-self: flex-start; }
+        .about-heading-content .cta-button { align-self: flex-start; margin-top: 24px; } /* Explicitly set margin for the button */
         .contact-cta .cta-button { background-color: var(--card-bg-color); color: var(--text-color); border: 1px solid var(--border-color); }
         .contact-cta .cta-button:hover { background-color: color-mix(in srgb, var(--card-bg-color), var(--text-color) 10%); color: var(--accent-color); }
 
-        /* --- Footer (unchanged) --- */
+        /* --- Footer --- */
         .site-footer { background-color: var(--background-color); padding-top: 80px; border-top: 1px solid var(--border-color); transition: background-color 0.3s ease, border-color 0.3s ease; }
         .footer-container { display: flex; flex-direction: column; gap: 40px; }
         .footer-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
@@ -320,11 +285,20 @@
         .footer-nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
         .footer-nav-link { font-size: 14px; color: var(--text-muted-color); transition: color 0.3s ease; }
         .footer-nav-link:hover { color: var(--text-color); }
-        .social-links { display: flex; gap: 16px; align-items: center; /* Added align-items for better vertical centering if needed */ }
-        .social-link { opacity: 0.6; transition: opacity 0.3s ease, color 0.3s ease; color: var(--text-muted-color); display: inline-flex; /* helps with alignment */ }
-        .social-link img { display: block; width: 24px; height: 24px; transition: filter 0.3s ease; /* Added transition for filter */ }
+        .social-links { display: flex; gap: 16px; align-items: center; }
+        .social-link { opacity: 0.6; transition: opacity 0.3s ease, color 0.3s ease; color: var(--text-muted-color); display: inline-flex; }
+        .social-link img { display: block; width: 24px; height: 24px; transition: filter 0.3s ease; }
         .social-link:hover { opacity: 1; color: var(--text-color); }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 30px 0; border-top: 1px solid var(--border-color); transition: border-color 0.3s ease; }
+        .footer-bottom {
+            display: flex;
+            justify-content: center; /* Changed from space-between to center */
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
         .copyright { font-size: 14px; color: var(--text-muted-color); margin: 0; transition: color 0.3s ease; }
 
         /* --- Animations (unchanged) --- */
@@ -333,16 +307,63 @@
         #hero .profile-picture.animate-on-scroll { transition-delay: 0.1s; transform: translateY(60px); } #hero .available-badge.animate-on-scroll { transition-delay: 0.2s; transform: translateY(60px); } #hero h1.animate-on-scroll { transition-delay: 0.3s; transform: translateY(60px); } #hero p.animate-on-scroll { transition-delay: 0.4s; transform: translateY(60px); } #hero .hero-social-links.animate-on-scroll { transition-delay: 0.5s; transform: translateY(60px); }
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
-         /* --- Responsiveness (unchanged general, added specifics for projects) --- */
-        @media (max-width: 1024px) { :root { --container-padding: 30px; --section-padding: 80px 0; } .about-grid { grid-template-columns: 1fr; } .experience-item { grid-template-columns: repeat(2, 1fr); } .experience-item p:last-child { text-align: left; } .footer-top { justify-content: center; text-align: center; } .footer-nav-links { justify-content: center; } .social-links { justify-content: center; } .footer-logo { margin-bottom: 20px; } }
-        @media (max-width: 767px) { :root { --container-padding: 18px; --section-padding: 60px 0; } .main-nav { height: 60px; } .nav-links { display: none; position: absolute; top: 60px; left: 0; width: 100%; background-color: var(--header-bg-color); backdrop-filter: blur(10px); flex-direction: column; padding: 20px var(--container-padding); border-top: 1px solid var(--border-color); align-items: flex-start; gap: 10px; transition: background-color 0.3s ease, border-color 0.3s ease;} .nav-links .nav-link { padding: 10px 0; width: 100%; font-size: 16px; } .nav-links .nav-action-button { padding: 10px 0; margin-left: 0; width: 100%; text-align: left; font-size: 16px; } #dark-mode-toggle { font-size: 20px; } .site-header.nav-open .nav-links { display: flex; } .mobile-nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); } .site-header.nav-open .mobile-nav-toggle span:nth-child(2) { opacity: 0; } .site-header.nav-open .mobile-nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); } .hero-section { padding-top: 120px; } .profile-picture { width: 120px; height: 120px; margin-bottom: 20px; border-width: 3px;} .profile-animation-bg { width: 130px; height: 130px; top: -5px; filter: blur(10px); } h1 { font-size: clamp(32px, 8vw, 40px); } h2 { font-size: clamp(28px, 7vw, 36px); } .about-heading-content .section-heading { text-align: center; } .about-heading-content .section-heading .small-heading { justify-content: center; } .about-heading-content .cta-button { align-self: center; } .skills-grid { padding: 30px 15px; } .experience-item { grid-template-columns: 1fr; text-align: left !important; gap: 8px; padding: 24px 0; } .experience-item p:last-child { text-align: left !important; } .testimonials-list { margin-top: 40px; gap: 20px; } .testimonial-item { padding: 25px; flex-basis: 100%; max-width: none; }
-        .projects-grid { grid-template-columns: 1fr; margin-top: 40px; gap: 20px; } .project-content { padding: 20px; } .project-content h3 { font-size: clamp(18px, 5vw, 20px); }
-        .contact-section .section-heading p { max-width: 90%; } .contact-cta { margin-top: 30px; } .footer-container { gap: 30px; } .footer-top, .footer-bottom { flex-direction: column; align-items: center; text-align: center; gap: 25px; } .footer-nav-links, .social-links { justify-content: center; gap: 20px; } .footer-logo { margin-bottom: 0; } .footer-bottom { padding: 25px 0; } }
+         /* --- Responsiveness --- */
+        @media (max-width: 1024px) {
+            :root { --container-padding: 30px; --section-padding: 80px 0; }
+            .about-grid { grid-template-columns: 1fr; }
+            .experience-item { grid-template-columns: repeat(2, 1fr); }
+            .experience-item p:last-child { text-align: left; }
+            .footer-top { justify-content: center; text-align: center; }
+            .footer-nav-links { justify-content: center; }
+            .social-links { justify-content: center; }
+            .footer-logo { margin-bottom: 20px; }
+        }
+        @media (max-width: 767px) {
+            :root { --container-padding: 18px; --section-padding: 60px 0; }
+            .main-nav { height: 60px; }
+            .nav-links { display: none; position: absolute; top: 60px; left: 0; width: 100%; background-color: var(--header-bg-color); backdrop-filter: blur(10px); flex-direction: column; padding: 20px var(--container-padding); border-top: 1px solid var(--border-color); align-items: flex-start; gap: 10px; transition: background-color 0.3s ease, border-color 0.3s ease;}
+            .nav-links .nav-link { padding: 10px 0; width: 100%; font-size: 16px; }
+            .nav-links .nav-action-button { padding: 10px 0; margin-left: 0; width: 100%; text-align: left; font-size: 16px; }
+            #dark-mode-toggle { font-size: 20px; }
+            .site-header.nav-open .nav-links { display: flex; }
+            .mobile-nav-toggle { display: block; }
+            .site-header.nav-open .mobile-nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .site-header.nav-open .mobile-nav-toggle span:nth-child(2) { opacity: 0; }
+            .site-header.nav-open .mobile-nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .hero-section { padding-top: 120px; }
+            .profile-picture { width: 120px; height: 120px; margin-bottom: 20px; border-width: 3px;}
+            .profile-animation-bg { width: 130px; height: 130px; top: -5px; filter: blur(10px); }
+            h1 { font-size: clamp(32px, 8vw, 40px); }
+            h2 { font-size: clamp(28px, 7vw, 36px); }
+            .about-heading-content .section-heading { text-align: center; }
+            .about-heading-content .section-heading .small-heading { justify-content: center; }
+            .about-heading-content .cta-button { align-self: center; }
+            .skills-grid { padding: 30px 15px; }
+            .experience-item { grid-template-columns: 1fr; text-align: left !important; gap: 8px; padding: 24px 0; }
+            .experience-item p:last-child { text-align: left !important; }
+            .testimonials-list { margin-top: 40px; gap: 20px; }
+            .testimonial-item { padding: 25px; flex-basis: 100%; max-width: none; }
+            .projects-grid { grid-template-columns: 1fr; margin-top: 40px; gap: 20px; }
+            .project-content { padding: 20px; }
+            .project-content h3 { font-size: clamp(18px, 5vw, 20px); }
+            .contact-section .section-heading p { max-width: 90%; }
+            .contact-cta { margin-top: 30px; }
+            .footer-container { gap: 30px; }
+            .footer-top { flex-direction: column; align-items: center; text-align: center; gap: 25px; } /* Removed .footer-bottom here as it's handled above for centering */
+            .footer-bottom { /* On mobile, it will inherit flex-direction: column from .footer-top if grouped, or stand alone */
+                flex-direction: column; /* Ensure it stacks on mobile if not already done by a common parent */
+                align-items: center;
+                text-align: center; /* This will center the copyright text */
+            }
+            .footer-nav-links, .social-links { justify-content: center; gap: 20px; }
+            .footer-logo { margin-bottom: 0; }
+            .footer-bottom { padding: 25px 0; }
+        }
 
         /* --- END OF EMBEDDED CSS --- */
     </style>
 </head>
-<body> <!-- Starts without .light-mode class -->
+<body>
 
     <header class="site-header">
         <nav class="main-nav container">
@@ -354,9 +375,7 @@
                 <li><a href="#experience" class="nav-link" data-lang-key="nav.experience">Esperienza</a></li>
                 <li><a href="#projects" class="nav-link" data-lang-key="nav.projects">Progetti</a></li>
                 <li><a href="#contact" class="nav-link" data-lang-key="nav.hobby">Hobby</a></li>
-                 <!-- Action Buttons -->
-                 <li><button id="translate-button" class="nav-action-button" aria-label="Translate to English">EN</button></li> <!-- Initial state: show EN -->
-                 <li><button id="dark-mode-toggle" class="nav-action-button" aria-label="Switch to Light Mode">☀️</button></li>
+                <li><button id="dark-mode-toggle" class="nav-action-button" aria-label="Switch to Light Mode">☀️</button></li>
             </ul>
             <button class="mobile-nav-toggle" aria-label="Toggle Navigation" aria-expanded="false">
                 <span></span>
@@ -367,78 +386,129 @@
     </header>
 
     <main>
-        <!-- Main Sections (Hero, About, Skills, Experience, Contact) - Unchanged -->
-        <section id="hero" class="hero-section"> <div class="hero-text-content"> <div class="profile-animation-bg"></div> <div class="profile-picture animate-on-scroll"> <img src="https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg" alt="Riccardo Ponte"> </div> <div class="available-badge animate-on-scroll"> <span class="availability-dot"></span> <span data-lang-key="hero.available">disponibile a collaborare</span> </div> <h1 class="animate-on-scroll" data-lang-key="hero.title">Sono <em>Riccardo</em></h1> <p class="animate-on-scroll" data-lang-key="hero.subtitle">Studente magistrale di 23 anni in AI, abito a Milano.</p> <div class="hero-social-links animate-on-scroll"> <a href="https://www.instagram.com/riccardopontee/" target="_blank" rel="noopener" aria-label="Instagram"> <img src="https://i.postimg.cc/VkDHdv77/Immagine-Whats-App-2025-05-09-ore-22-15-21-148304b4-removebg-preview.png" alt="Instagram Icon" style="width: 24px; height: 24px;"> </a> <span class="social-separator"></span> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" target="_blank" rel="noopener" aria-label="LinkedIn"> <img src="https://i.postimg.cc/qRn2MgRF/Immagine-Whats-App-2025-05-09-ore-21-55-42-2f1199ca-removebg-preview.png" alt="LinkedIn Icon" style="width: 24px; height: 24px;"> </a> <span class="social-separator"></span> <a href="https://www.youtube.com/@riccardopontee" target="_blank" rel="noopener" aria-label="YouTube"> <img src="https://i.postimg.cc/Wb1q9fnf/Immagine-Whats-App-2025-05-09-ore-21-55-41-312618a6-removebg-preview.png" alt="YouTube Icon" style="width: 24px; height: 24px;"> </a> </div> </div> <a href="#about-me" class="scroll-down-arrow" aria-label="Scroll down"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> </a> <div class="hero-gradient-overlay"></div> </section>
-        <section id="about-me" class="about-section"> <div class="container about-grid"> <div class="about-heading-content animate-on-scroll"> <div class="section-heading"> <div class="small-heading"> <p><em data-lang-key="about.tag">Chi è Riccardo?</em></p> </div> <h2 data-lang-key="about.title">Specialista <em>Generative AI</em> Nuovo</h2> </div> <p data-lang-key="about.p1">Sono una persona analitica, creativa e ambiziosa con una forte passione per il mondo dell'AI Generativa e del social media marketing.</p> <p data-lang-key="about.p2">Laureato in Comunicazione d'Impresa e Relazioni Pubbliche, sto attualmente frequentando il corso di laurea magistrale in Intelligenza Artificiale presso l'Università IULM.</p> <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="cta-button" target="_blank" rel="noopener"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="1.5"/> <path d="M6.38 6.38L17.62 17.62M17.62 6.38L6.38 17.62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M17 8C17.5523 8 18 7.55228 18 7C18 6.44772 17.5523 6 17 6C16.4477 6 16 6.44772 16 7C16 7.55228 16.4477 8 17 8Z" fill="currentColor"/> <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/> </svg> <span data-lang-key="about.button">Leggi di più su LinkedIn</span> </a> </div> <div class="about-image-card animate-on-scroll delay-1"> <img src="https://i.postimg.cc/T3X0SK6Q/def.jpg" alt="Riccardo Ponte working on a project"> </div> </div> </section>
-        <section id="skills" class="skills-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="skills.tag">Competenze e Formazione</em></p> </div> </div> <div class="skills-experience-container"> <div class="skills-grid animate-on-scroll delay-1"> <span class="skill-tag" data-lang-key="skills.skill1">Strategia Digitale</span> <span class="skill-tag" data-lang-key="skills.skill2">Comunicazione d'Impresa</span> <span class="skill-tag" data-lang-key="skills.skill3">Content Marketing</span> <span class="skill-tag" data-lang-key="skills.skill4">AI Generativa</span> <span class="skill-tag" data-lang-key="skills.skill5">Gestione Social Media</span> <span class="skill-tag">Excel</span> <span class="skill-tag" data-lang-key="skills.skill7">No Code</span> <span class="skill-tag" data-lang-key="skills.skill8">Strumenti di Automazione</span> <span class="skill-tag" data-lang-key="skills.skill9">Microsoft Office</span> </div> <div class="experience-list animate-on-scroll delay-2"> <div class="experience-item"> <p data-lang-key="skills.edu1.title">Laurea Magistrale</p> <p data-lang-key="skills.edu1.desc">Intelligenza Artificiale per il Marketing</p> <p>2023 – 2025</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu2.title">Laurea Triennale</p> <p data-lang-key="skills.edu2.desc">Comunicazione d'Impresa e Relazioni Pubbliche</p> <p>2020 – 2023</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu3.title">Certificazione</p> <p data-lang-key="skills.edu3.desc">Certificazione di lingua Inglese (Luglio 2019)</p> <p>07/2019</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu4.title">Diploma</p> <p data-lang-key="skills.edu4.desc">Relazioni Internazionali, Finanza e Marketing</p> <p data-lang-key="skills.edu4.date">Anno Accademico 2019/20</p> </div> </div> </div> </div> </section>
-        <section id="experience" class="reviews-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="experience.tag">Curriculum</em></p> </div> <h2 data-lang-key="experience.title">Esperienza <em>Lavorativa</em></h2> </div> <div class="testimonials-list"> <article class="testimonial-item animate-on-scroll"> <div class="testimonial-author"> <img src="https://unacom.it/wp-content/uploads/2022/03/havas_milan_logo.jpg" alt="Havas Milan Logo"> <span class="author-name">Havas Milan</span> </div> <blockquote> <p data-lang-key="experience.job1.desc">Attualmente mi occupo di formalizzare strategie di marketing data driven</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job1.title">Client Data Assistant</span> </article> <article class="testimonial-item animate-on-scroll delay-1"> <div class="testimonial-author"> <img src="https://zucchi39.it/images/icone-servizi/icona-cloud.png" alt="Digital Coach Logo"> <span class="author-name">Zucchi 39</span> </div> <blockquote> <p data-lang-key="experience.job2.desc">Mi sono occupato di agenti virtuali, articoli WordPress e analisi dati</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job2.title">Specialista AI & SEO</span> </article> <article class="testimonial-item animate-on-scroll delay-2"> <div class="testimonial-author"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7i0r3e1-I_1xSTZOWKbFC1_zhKBSeqP4Rx5GdVhw1lQhasfzb19PozqV_6xHccPRgOqg&usqp=CAU" alt="IULM University Logo"> <span class="author-name">IULM University</span> </div> <blockquote> <p data-lang-key="experience.job3.desc">Mi sono occupato di analisi dati e supporto docenti/studenti</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job3.title">Segreteria Studenti</span> </article> </div> </div> </section>
-
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <div class="section-heading animate-on-scroll">
-                    <div class="small-heading justify-center">
-                        <p><em data-lang-key="projects.tag">I Miei Lavori</em></p>
-                    </div>
-                    <h2 data-lang-key="projects.title"><em>Progetti</em> in Evidenza</h2>
+        <section id="hero" class="hero-section">
+            <div class="hero-text-content">
+                <div class="profile-animation-bg"></div>
+                <div class="profile-picture animate-on-scroll">
+                    <img src="https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg" alt="Riccardo Ponte">
                 </div>
-                <div class="projects-grid">
-                    <!-- New Project Item 3 - Moved to first position -->
-                    <article class="project-item animate-on-scroll">
-                        <div class="project-image-container">
-                             <img src="https://i.postimg.cc/tJKWk1gc/screenshot.png" alt="AutocareAI Thumbnail">
+                <div class="available-badge animate-on-scroll">
+                    <span class="availability-dot"></span>
+                    <span data-lang-key="hero.available">disponibile a collaborare</span>
+                </div>
+                <h1 class="animate-on-scroll" data-lang-key="hero.title">Sono <em>Riccardo</em></h1>
+                <p class="animate-on-scroll" data-lang-key="hero.subtitle">Studente di 23 anni, abito a Milano.</p>
+                <div class="hero-social-links animate-on-scroll">
+                    <a href="https://www.instagram.com/riccardopontee/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="https://i.postimg.cc/VkDHdv77/Immagine-Whats-App-2025-05-09-ore-22-15-21-148304b4-removebg-preview.png" alt="Instagram Icon">
+                    </a>
+                    <span class="social-separator"></span>
+                    <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <img src="https://i.postimg.cc/qRn2MgRF/Immagine-Whats-App-2025-05-09-ore-21-55-42-2f1199ca-removebg-preview.png" alt="LinkedIn Icon">
+                    </a>
+                    <span class="social-separator"></span>
+                    <a href="https://www.youtube.com/@riccardopontee" target="_blank" rel="noopener" aria-label="YouTube">
+                        <img src="https://i.postimg.cc/Wb1q9fnf/Immagine-Whats-App-2025-05-09-ore-21-55-41-312618a6-removebg-preview.png" alt="YouTube Icon">
+                    </a>
+                </div>
+            </div>
+            <a href="#about-me" class="scroll-down-arrow" aria-label="Scroll down">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="hero-gradient-overlay"></div>
+        </section>
+        <section id="about-me" class="about-section">
+            <div class="container about-grid">
+                <div class="about-heading-content animate-on-scroll">
+                    <div class="section-heading">
+                        <div class="small-heading">
+                            <p><em data-lang-key="about.tag">Chi è Riccardo?</em></p>
                         </div>
-                        <div class="project-content">
-                            <h3 data-lang-key="projects.item3.title">AutocareAI</h3>
-                            <p data-lang-key="projects.item3.desc">Il lavoro si concentra sullo sviluppo di un agente AI per preventivi personalizzati</p>
-                            <div class="project-tags">
-                                <span class="skill-tag">AI</span>
-                                <span class="skill-tag" data-lang-key="projects.tag.imageRecognition">Riconoscimento Immagini</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://ai2025lab.github.io/laboratorio-di-AI/" class="cta-button project-link" target="_blank" rel="noopener" data-lang-key="projects.viewLink">Vedi Progetto</a>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Project Item 1 - Moved to second position -->
-                    <article class="project-item animate-on-scroll delay-1">
-                        <div class="project-image-container">
-                            <img src="https://i.postimg.cc/6QQ2hC2R/Immagine-2025-05-09-195630.png" alt="Sito di baratto in stile Tinder Thumbnail">
-                        </div>
-                        <div class="project-content">
-                            <h3 data-lang-key="projects.item1.title">Sito di baratto in stile Tinder</h3>
-                            <p data-lang-key="projects.item1.desc">Il progetto si focalizza sull'ideazione di una piattaforma di baratto ispirata a Tinder</p>
-                            <div class="project-tags">
-                                <span class="skill-tag">AI</span>
-                                <span class="skill-tag" data-lang-key="projects.tag.graphics">Grafica</span>
-                                <span class="skill-tag">Web</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://riccardoponte.github.io/Scambialo/" class="cta-button project-link" target="_blank" rel="noopener" data-lang-key="projects.viewLink">Vedi Progetto</a>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Project Item 2 - Moved to third position -->
-                    <article class="project-item animate-on-scroll delay-2">
-                        <div class="project-image-container">
-                            <img src="https://i.postimg.cc/cHX93Yzr/Chat-GPT-Image-9-mag-2025-22-45-55.png" alt="Chatbot aziendale Thumbnail">
-                        </div>
-                        <div class="project-content">
-                            <h3 data-lang-key="projects.item2.title">Consulente AI</h3>
-                            <p data-lang-key="projects.item2.desc">L'obiettivo è realizzare un chatbot AI come soluzione di Marketing Automation</p>
-                            <div class="project-tags">
-                                <span class="skill-tag">Marketing</span>
-                                <span class="skill-tag" data-lang-key="projects.tag.automation">Automazione</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://www.linkedin.com/posts/riccardo-giorgio-ponte-a5a528217_sono-lieto-di-annunciare-il-mio-chatbot-per-activity-7307342088461836289-Yuhh?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADa3ieYB_vWqYIhjfnVqD4h_b3B57QHRpfQ" class="cta-button project-link" target="_blank" rel="noopener" data-lang-key="projects.viewLink">Vedi Progetto</a>
-                            </div>
-                        </div>
-                    </article>
+                        <h2 data-lang-key="about.title">Specialista <em>Generative AI</em></h2>
+                    </div>
+                    <p data-lang-key="about.p1">Sono una persona analitica, creativa e appassionata di AI, studio presso l'università IULM di Milano per conseguire la laurea magistrale.</p>
+                    <p data-lang-key="about.p2">Utilizzo strumenti di AI Generative per realizzare siti web e applicazioni senza essere un programmatore specializzato.</p>
+                    <a href="https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217" class="cta-button" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M6.38 6.38L17.62 17.62M17.62 6.38L6.38 17.62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8C17.5523 8 18 7.55228 18 7C18 6.44772 17.5523 6 17 6C16.4477 6 16 6.44772 16 7C16 7.55228 16.4477 8 17 8Z" fill="currentColor"/>
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span data-lang-key="about.button">Linkedin</span>
+                    </a>
+                </div>
+                <div class="about-image-card animate-on-scroll delay-1">
+                    <img src="https://i.postimg.cc/T3X0SK6Q/def.jpg" alt="Riccardo Ponte working on a project">
                 </div>
             </div>
         </section>
+        <section id="skills" class="skills-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="skills.tag">Competenze</em></p> </div> </div> <div class="skills-experience-container"> <div class="skills-grid animate-on-scroll delay-1"> <span class="skill-tag" data-lang-key="skills.ai">Intelligenza artificiale</span> <span class="skill-tag" data-lang-key="skills.social">Social Media</span> <span class="skill-tag" data-lang-key="skills.data">Analisi dati</span> <span class="skill-tag" data-lang-key="skills.marketing">Marketing digitale</span> </div> <div class="experience-list animate-on-scroll delay-2"> <div class="experience-item"> <p data-lang-key="skills.edu1.title">Laurea Magistrale</p> <p data-lang-key="skills.edu1.desc">Intelligenza Artificiale per il Marketing</p> <p>2023 – 2025</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu2.title">Laurea Triennale</p> <p data-lang-key="skills.edu2.desc">Comunicazione d'Impresa e Relazioni Pubbliche</p> <p>2020 – 2023</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu3.title">Certificazione</p> <p data-lang-key="skills.edu3.desc">Certificazione di lingua Inglese (Luglio 2019)</p> <p>07/2019</p> </div> <div class="experience-item"> <p data-lang-key="skills.edu4.title">Diploma</p> <p data-lang-key="skills.edu4.desc">Relazioni Internazionali, Finanza e Marketing</p> <p data-lang-key="skills.edu4.date">Anno Accademico 2019/20</p> </div> </div> </div> </div> </section>
+        <section id="experience" class="reviews-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="experience.tag">Curriculum</em></p> </div> <h2 data-lang-key="experience.title">Esperienza <em>Lavorativa</em></h2> </div> <div class="testimonials-list"> <article class="testimonial-item animate-on-scroll"> <div class="testimonial-author"> <img src="https://unacom.it/wp-content/uploads/2022/03/havas_milan_logo.jpg" alt="Havas Milan Logo"> <span class="author-name">Havas Milan</span> </div> <blockquote> <p data-lang-key="experience.job1.desc">Mi occupo di Marketing data-driven</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job1.title">Client Data Assistant</span> </article> <article class="testimonial-item animate-on-scroll delay-1"> <div class="testimonial-author"> <img src="https://zucchi39.it/images/icone-servizi/icona-cloud.png" alt="Digital Coach Logo"> <span class="author-name">Zucchi 39</span> </div> <blockquote> <p data-lang-key="experience.job2.desc">Ho realizzato agenti virtuali AI</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job2.title">Specialista AI & SEO</span> </article> <article class="testimonial-item animate-on-scroll delay-2"> <div class="testimonial-author"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7i0r3e1-I_1xSTZOWKbFC1_zhKBSeqP4Rx5GdVhw1lQhasfzb19PozqV_6xHccPRgOqg&usqp=CAU" alt="IULM University Logo"> <span class="author-name">IULM University</span> </div> <blockquote> <p data-lang-key="experience.job3.desc">Ho analizzato banche dati</p> </blockquote> <span class="testimonial-source" data-lang-key="experience.job3.title">Segreteria Studenti</span> </article> </div> </div> </section>
 
-        <section id="contact" class="contact-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="hobby.tag">Hobby</em></p> </div> <h2 data-lang-key="hobby.title">Canale <em>YouTube</em></h2> <p data-lang-key="hobby.desc">Sul mio canale mi concentro sulla creazione di grafiche personalizzate e shorts YouTube a tema calcistico.</p> </div> <div class="contact-cta animate-on-scroll delay-1" style="text-align: center; margin-top: 40px;"> <a href="https://www.youtube.com/@riccardopontee" class="cta-button" style="margin: 0 auto; display: inline-flex;" target="_blank" rel="noopener"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M21.1014 6.50008C20.941 5.37452 20.2761 4.39961 19.3294 3.8045C18.1854 3.07661 16.7131 2.81873C15.3588 2.83342C13.4751 2.84569C11.5249 2.84569C9.64116 2.83342C8.28687 2.81873C6.81461 3.07661C5.67059 3.8045C4.72387 4.39961C4.05898 5.37452C3.89862 6.50008C3.64503 8.44493C3.64503 10.5551C3.89862 12.5C4.05898 13.6255C4.72387 14.6004C5.67059 15.1955C6.81461 15.9234C8.28687 16.1813C9.64116 16.1666C11.5249 16.1543C13.4751 16.1543C15.3588 16.1666C16.7131 16.1813C18.1854 15.9234C19.3294 15.1955C20.2761 14.6004C20.941 13.6255C21.1014 12.5C21.355 10.5551C21.355 8.44493C21.1014 6.50008Z" stroke="currentColor" stroke-width="1.5"/> <path d="M10 12.5V6.5L15 9.5L10 12.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg> <span data-lang-key="hobby.button">Visita Canale YouTube</span> </a> </div> </div> </section>
+        <section id="projects" class="projects-section">
+    <div class="container">
+        <div class="section-heading animate-on-scroll">
+            <div class="small-heading justify-center">
+                <p><em data-lang-key="projects.tag">Progetti</em></p>
+            </div>
+            <h2 data-lang-key="projects.title"><em>Progetti</em> in Evidenza</h2>
+        </div>
+        <div class="projects-grid">
+            <article class="project-item animate-on-scroll">
+                <div class="project-image-container">
+                     <img src="https://i.postimg.cc/tJKWk1gc/screenshot.png" alt="AutocareAI Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3 data-lang-key="projects.item3.title">AutocareAI</h3>
+                    <p data-lang-key="projects.item3.desc">Agente AI per preventivi personalizzati</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">AI</span>
+                        <span class="skill-tag" data-lang-key="projects.tag.imageRecognition">Riconoscimento Immagini</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ai2025lab.github.io/laboratorio-di-AI/" class="cta-button project-link" target="_blank" rel="noopener" data-lang-key="projects.viewLink">Vedi Progetto</a>
+                    </div>
+                </div>
+            </article>
+            <article class="project-item animate-on-scroll delay-1">
+                <div class="project-image-container">
+                    <img src="https://i.postimg.cc/6QQ2hC2R/Immagine-2025-05-09-195630.png" alt="Sito di baratto in stile Tinder Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3 data-lang-key="projects.item1.title">Sito di baratto</h3>
+                    <p data-lang-key="projects.item1.desc">Piattaforma sperimentale ispirata a Tinder</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">AI</span>
+                        <span class="skill-tag" data-lang-key="projects.tag.graphics">Grafica</span>
+                        <span class="skill-tag">Web</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://riccardoponte.github.io/Scambialo/" class="cta-button project-link" target="_blank" rel="noopener" data-lang-key="projects.viewLink">Vedi Progetto</a>
+                    </div>
+                </div>
+            </article>
+            <article class="project-item animate-on-scroll delay-2">
+                <div class="project-image-container">
+                    <img src="https://i.postimg.cc/cHX93Yzr/Chat-GPT-Image-9-mag-2025-22-45-55.png" alt="Chatbot aziendale Thumbnail">
+                </div>
+                <div class="project-content">
+                    <h3 data-lang-key="projects.item2.title">Consulente AI</h3>
+                    <p data-lang-key="projects.item2.desc">Agente commerciale virtuale</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">Marketing</span>
+                        <span class="skill-tag" data-lang-key="projects.tag.automation">Automazione</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/posts/riccardo-giorgio-ponte-a5a528217_sono-lieto-di-annunciare-il-mio-chatbot-per-activity-7307342088461836289-Yuhh?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADa3ieYB_vWqYIhjfnVqD4h_b3B57QHRpfQ" class="cta-button project-link" target="_blank" rel="noopener" data-lang-key="projects.viewLink">Vedi Progetto</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+        <section id="contact" class="contact-section"> <div class="container"> <div class="section-heading animate-on-scroll"> <div class="small-heading justify-center"> <p><em data-lang-key="hobby.tag">Hobby</em></p> </div> <h2 data-lang-key="hobby.title">Canale <em>YouTube</em></h2> <p data-lang-key="hobby.desc">Creo video shorts e modero la mia community.</p> </div> <div class="contact-cta animate-on-scroll delay-1" style="text-align: center; margin-top: 40px;"> <a href="https://www.youtube.com/@riccardopontee" class="cta-button" style="margin: 0 auto; display: inline-flex;" target="_blank" rel="noopener"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M21.1014 6.50008C20.941 5.37452 20.2761 4.39961 19.3294 3.8045C18.1854 3.07661 16.7131 2.81873C15.3588 2.83342C13.4751 2.84569C11.5249 2.84569C9.64116 2.83342C8.28687 2.81873C6.81461 3.07661C5.67059 3.8045C4.72387 4.39961C4.05898 5.37452C3.89862 6.50008C3.64503 8.44493C3.64503 10.5551C3.89862 12.5C4.05898 13.6255C4.72387 14.6004C5.67059 15.1955C6.81461 15.9234C8.28687 16.1813C9.64116 16.1666C11.5249 16.1543C13.4751 16.1543C15.3588 16.1666C16.7131 16.1813C18.1854 15.9234C19.3294 15.1955C20.2761 14.6004C20.941 13.6255C21.1014 12.5C21.355 10.5551C21.355 8.44493C21.1014 6.50008Z" stroke="currentColor" stroke-width="1.5"/> <path d="M10 12.5V6.5L15 9.5L10 12.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg> <span data-lang-key="hobby.button">Visita Canale YouTube</span> </a> </div> </div> </section>
     </main>
 
     <footer class="site-footer">
@@ -470,81 +540,98 @@
         </div>
     </footer>
 
-    <!-- Import Flowise Embed Library (loaded once) -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script>
 
     <script>
         // --- START OF EMBEDDED JAVASCRIPT ---
 
         let ChatbotInstance;
-        // Initialize based on HTML tag, which is now 'it'
-        let currentLanguage = document.documentElement.lang || 'it'; // Default to 'it' if somehow unset
+        let currentLanguage = document.documentElement.lang || 'it';
 
-        // --- Translations ---
         const siteTranslations = {
             en: {
                 "nav.portfolio": "Portfolio", "nav.about": "About", "nav.skills": "Skills", "nav.experience": "Experience", "nav.projects": "Projects", "nav.hobby": "Hobby",
                 "hero.available": "available for work", "hero.title": "I'm <em>Riccardo</em>", "hero.subtitle": "23-year-old AI Master's student based in Milan.",
-                "about.tag": "Who is Riccardo ?", "about.title": "New <em>Generative AI Specialist</em>", "about.p1": "I am an analytical, creative, and ambitious individual with a strong passion for the world of Generative AI and social media marketing.", "about.p2": "Graduated in Corporate Communication and Public Relations, I am currently pursuing a Master's degree in Artificial Intelligence at IULM University.", "about.button": "Read More on LinkedIn",
-                "skills.tag": "Skills & Education", "skills.skill1": "Digital Strategy", "skills.skill2": "Corporate Communication", "skills.skill3": "Content Marketing", "skills.skill4": "Generative AI", "skills.skill5": "Social Media Management", "skill6": "Excel", "skills.skill7": "No Code", "skills.skill8": "Automation Tools", "skills.skill9": "Microsoft Office",
-                "skills.edu1.title": "Master's Degree", "skills.edu1.desc": "Artificial Intelligence for Marketing", "skills.edu2.title": "Bachelor's Degree", "skills.edu2.desc": "Corporate Communication & Public Relations", "skills.edu3.title": "Certification", "skills.edu3.desc": "English Language Certification (July 2019)", "skills.edu4.title": "Diploma", "skills.edu4.desc": "International Relations, Finance & Marketing", "skills.edu4.date": "Academic Year 2019/20",
+                "about.tag": "Who is Riccardo?", "about.title": "<em>Generative AI</em> Specialist",
+                "about.p1": "I am an analytical and creative individual, passionate about AI. I am currently pursuing a Master's degree at IULM University in Milan.",
+                "about.p2": "I use Generative AI tools to create websites and applications without being a specialized programmer.",
+                "about.button": "Read More on LinkedIn",
+                "skills.tag": "Skills & Education",
+                "skills.ai": "Artificial Intelligence",
+                "skills.social": "Social Media",
+                "skills.data": "Data Analysis",
+                "skills.marketing": "Digital Marketing",
+                "skills.edu1.title": "Master's Degree", "skills.edu1.desc": "Artificial Intelligence for Marketing",
+                "skills.edu2.title": "Bachelor's Degree", "skills.edu2.desc": "Corporate Communication & Public Relations",
+                "skills.edu3.title": "Certification", "skills.edu3.desc": "English Language Certification (July 2019)",
+                "skills.edu4.title": "Diploma", "skills.edu4.desc": "International Relations, Finance & Marketing", "skills.edu4.date": "Academic Year 2019/20",
                 "experience.tag": "Resume", "experience.title": "Work <em>Experience</em>",
-                // Updated Job descriptions
-                "experience.job1.desc": "Currently transforming raw analytics into actionable marketing strategies", // Updated description
+                "experience.job1.desc": "Currently transforming raw analytics into actionable marketing strategies",
                 "experience.job1.title": "Client Data Assistant",
                 "experience.job2.desc": "I worked on virtual agents, WordPress articles, and data analysis",
                 "experience.job2.title": "AI & SEO Specialist",
-                "experience.job3.desc": "I handled data analysis and faculty/student support", // Updated description
+                "experience.job3.desc": "I handled data analysis and faculty/student support",
                 "experience.job3.title": "University Secretary",
-                "projects.tag": "My Work", "projects.title": "Featured <em>Projects</em>", "projects.desc": "Here are some of the projects I've worked on, showcasing my skills and passion.",
-                // Updated Project titles/descriptions and added new tag
+                "projects.tag": "My Work", "projects.title": "Featured <em>Projects</em>",
                 "projects.item1.title": "Tinder-style Bartering Site",
                 "projects.item1.desc": "The project focuses on designing a platform for bartering inspired by Tinder",
-                "projects.item2.title": "AI Consultant", // Updated title
-                "projects.item2.desc": "The goal is to create an AI chatbot as a Marketing Automation solution", // Updated description
-                "projects.item3.title": "AutocareAI", // New Project title
-                "projects.item3.desc": "The work focuses on developing an AI agent for personalized quotes", // Updated description
+                "projects.item2.title": "AI Consultant",
+                "projects.item2.desc": "The goal is to create an AI chatbot as a commercial customer assistant.",
+                "projects.item3.title": "AutocareAI",
+                "projects.item3.desc": "The work focuses on developing an AI agent for personalized quotes",
                 "projects.tag.graphics": "Graphics",
                 "projects.tag.automation": "Automation",
-                "projects.tag.imageRecognition": "Image Recognition", // Added new tag translation
+                "projects.tag.imageRecognition": "Image Recognition",
                 "projects.viewLink": "View Project",
-                "hobby.tag": "Hobby", "hobby.title": "YouTube <em>Channel</em>", "hobby.desc": "On my channel, I focus on creating personalized graphics and soccer-themed YouTube shorts.", "hobby.button": "Visit YouTube Channel",
-                "footer.copyright": "© 2024 Riccardo Ponte. All rights reserved."
+                "hobby.tag": "Hobby", "hobby.title": "YouTube <em>Channel</em>",
+                "hobby.desc": "I create short videos and moderate my community.",
+                "hobby.button": "Visit YouTube Channel",
+                "footer.copyright": "© 2025 Riccardo Ponte. All rights reserved."
             },
             it: {
                 "nav.portfolio": "Portfolio", "nav.about": "Chi Sono", "nav.skills": "Competenze", "nav.experience": "Esperienza", "nav.projects": "Progetti", "nav.hobby": "Hobby",
-                "hero.available": "disponibile a collaborare", "hero.title": "Sono <em>Riccardo</em>", "hero.subtitle": "Studente magistrale di 23 anni in AI, abito a Milano.",
-                "about.tag": "Chi è Riccardo?", "about.title": "Specialista <em>Generative AI</em> Nuovo", "about.p1": "Sono una persona analitica, creativa e ambiziosa con una forte passione per il mondo dell'AI Generativa e del social media marketing.", "about.p2": "Laureato in Comunicazione d'Impresa e Relazioni Pubbliche, sto attualmente frequentando il corso di laurea magistrale in Intelligenza Artificiale presso l'Università IULM.", "about.button": "Leggi di più su LinkedIn",
-                "skills.tag": "Competenze e Formazione", "skills.skill1": "Strategia Digitale", "skills.skill2": "Comunicazione d'Impresa", "skills.skill3": "Content Marketing", "skills.skill4": "AI Generativa", "skills.skill5": "Gestione Social Media", "skill6": "Excel", "skills.skill7": "No Code", "skills.skill8": "Strumenti di Automazione", "skills.skill9": "Microsoft Office",
-                "skills.edu1.title": "Laurea Magistrale", "skills.edu1.desc": "Intelligenza Artificiale per il Marketing", "skills.edu2.title": "Laurea Triennale", "skills.edu2.desc": "Comunicazione d'Impresa e Relazioni Pubbliche", "skills.edu3.title": "Certificazione", "skills.edu3.desc": "Certificazione di lingua Inglese (Luglio 2019)", "skills.edu4.title": "Diploma", "skills.edu4.desc": "Relazioni Internazionali, Finanza e Marketing", "skills.edu4.date": "Anno Accademico 2019/20",
+                "hero.available": "disponibile a collaborare", "hero.title": "Sono <em>Riccardo</em>", "hero.subtitle": "Studente di 23 anni, abito a Milano.",
+                "about.tag": "Chi è Riccardo?", "about.title": "Specialista <em>Generative AI</em>",
+                "about.p1": "Sono una persona analitica, creativa e appassionata di AI, studio presso l'università IULM di Milano per conseguire la laurea magistrale.",
+                "about.p2": "Utilizzo strumenti di AI Generative per realizzare siti web e applicazioni senza essere un programmatore specializzato.",
+                "about.button": "Linkedin",
+                "skills.tag": "Competenze",
+                "skills.ai": "Intelligenza artificiale",
+                "skills.social": "Social Media",
+                "skills.data": "Analisi dati",
+                "skills.marketing": "Marketing digitale",
+                "skills.edu1.title": "Laurea Magistrale", "skills.edu1.desc": "Intelligenza Artificiale per il Marketing",
+                "skills.edu2.title": "Laurea Triennale", "skills.edu2.desc": "Comunicazione d'Impresa e Relazioni Pubbliche",
+                "skills.edu3.title": "Certificazione", "skills.edu3.desc": "Certificazione di lingua Inglese (Luglio 2019)",
+                "skills.edu4.title": "Diploma", "skills.edu4.desc": "Relazioni Internazionali, Finanza e Marketing", "skills.edu4.date": "Anno Accademico 2019/20",
                 "experience.tag": "Curriculum", "experience.title": "Esperienza <em>Lavorativa</em>",
-                // Updated Job descriptions
-                "experience.job1.desc": "Attualmente mi occupo di formalizzare strategie di marketing data driven", // Updated Italian text
+                "experience.job1.desc": "Mi occupo di strategie di Marketing data-driven",
                 "experience.job1.title": "Client Data Assistant",
-                "experience.job2.desc": "Mi sono occupato di agenti virtuali, articoli WordPress e analisi dati", // Updated Italian text
+                "experience.job2.desc": "Ho realizzato agenti virtuali e articoli WordPress",
                 "experience.job2.title": "Specialista AI & SEO",
-                "experience.job3.desc": "Mi sono occupato di analisi dati e supporto docenti/studenti", // Updated Italian text
+                "experience.job3.desc": "Ho supportato docenti e analizzato banche dati",
                 "experience.job3.title": "Segreteria Studenti",
-                "projects.tag": "I Miei Lavori", "projects.title": "<em>Progetti</em> in Evidenza", "projects.desc": "Ecco alcuni dei progetti a cui ho lavorato, che mostrano le mie capacità e la mia passione.",
-                // Updated Project titles/descriptions and added new tag
+                "projects.tag": "Progetti", "projects.title": "<em>Progetti</em> Recenti",
                 "projects.item1.title": "Sito di baratto in stile Tinder",
-                "projects.item1.desc": "Il progetto si focalizza sull'ideazione di una piattaforma per il baratto ispirata a Tinder",
-                "projects.item2.title": "Consulente AI", // Updated title
-                "projects.item2.desc": "L'obiettivo è realizzare un chatbot AI come soluzione di Marketing Automation", // Updated description
-                "projects.item3.title": "AutocareAI", // New Project title
-                "projects.item3.desc": "Il lavoro si concentra sullo sviluppo di un agente AI per preventivi personalizzati", // Updated Italian text
+                "projects.item1.desc": "Il progetto si focalizza sull'ideazione di una piattaforma ispirata a Tinder",
+                "projects.item2.title": "Consulente AI",
+                "projects.item2.desc": "L'obiettivo è realizzare un chatbot AI come asssistente clienti commerciale",
+                "projects.item3.title": "AutocareAI",
+                "projects.item3.desc": "Il lavoro si concentra sullo sviluppo di un agente AI per preventivi personalizzati",
                 "projects.tag.graphics": "Grafica",
                 "projects.tag.automation": "Automazione",
-                "projects.tag.imageRecognition": "Riconoscimento Immagini", // Added new tag translation
-                "projects.viewLink": "Vedi Progetto",
-                "hobby.tag": "Hobby", "hobby.title": "Canale <em>YouTube</em>", "hobby.desc": "Sul mio canale mi concentro sulla creazione di grafiche personalizzate e shorts YouTube a tema calcistico.", "hobby.button": "Visita Canale YouTube",
+                "projects.tag.imageRecognition": "Riconoscimento Immagini",
+                "projects.viewLink": "Visualizza",
+                "hobby.tag": "Hobby", "hobby.title": "Canale <em>YouTube</em>",
+                "hobby.desc": "Creo video shorts e modero la mia community",
+                "hobby.button": "Iscriviti",
                 "footer.copyright": "© 2025 Riccardo Ponte. Tutti i diritti riservati."
             }
         };
         const chatbotTranslations = {
             en: {
                 title: 'Riccardo',
-                welcomeMessage: 'Hi there :) Welcome to my site!',
+                welcomeMessage: 'Welcome :)', // MODIFIED
                 placeholder: 'Ask me something...',
                 errorMessage: 'Sorry, an error occurred. Please try again.',
                 sourceDocsTitle: 'Sources:',
@@ -552,7 +639,7 @@
             },
             it: {
                 title: 'Riccardo',
-                welcomeMessage: 'Ciao :) Benvenuto sul mio sito!',
+                welcomeMessage: 'Benvenuto :)', // MODIFIED
                 placeholder: 'Chiedimi qualcosa...',
                 errorMessage: 'Spiacente, si è verificato un errore. Riprova.',
                 sourceDocsTitle: 'Fonti:',
@@ -560,16 +647,14 @@
             }
         };
 
-        // --- Define Chatbot Base Themes --- (unchanged)
         const chatbotBaseThemeSettings = {
             button: {
                 right: 20,
                 bottom: 20,
                 size: 48,
-                dragAndDrop: false, // Disable drag-and-drop
-                customIconSrc: 'https://i.postimg.cc/yx6bX5Cs/Bolla-di-parlare-con-stella.png', // Updated icon
-                autoWindowOpen: { autoOpen: false }, // Disable auto-opening
-                // Add background effect to the chatbot bubble
+                dragAndDrop: false,
+                customIconSrc: 'https://i.postimg.cc/yx6bX5Cs/Bolla-di-parlare-con-stella.png',
+                autoWindowOpen: { autoOpen: false },
                 customStyles: {
                     boxShadow: '0 0 20px rgba(129, 79, 255, 0.5), 0 0 30px rgba(49, 238, 51, 0.4), 0 0 40px rgba(255, 255, 255, 0.3)',
                     background: 'conic-gradient(from 0deg at 50% 50%, rgba(129, 79, 255, 0.5), rgba(49, 238, 51, 0.4), rgba(255, 255, 255, 0.3), rgba(129, 79, 255, 0.5))',
@@ -581,8 +666,8 @@
                 showTitle: true,
                 showAgentMessages: true,
                 titleAvatarSrc: 'https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg',
-                height: 450, // Altezza ridotta
-                width: 350,  // Larghezza ridotta
+                height: 450,
+                width: 350,
                 fontSize: 16,
                 starterPromptFontSize: 15,
                 clearChatOnReload: false,
@@ -664,25 +749,22 @@
             }
         };
 
-
-        // --- Function to Initialize/Re-initialize Chatbot --- (unchanged)
         function initializeChatbot() {
             if (!ChatbotInstance) { console.warn("Chatbot library not loaded yet."); return; }
             const existingChatbotElement = document.querySelector('flowise-chatbot');
             if (existingChatbotElement) { try { existingChatbotElement.remove(); } catch (e) { console.error("Error removing existing chatbot:", e); } }
             const isLightMode = document.body.classList.contains('light-mode');
             const visualThemeBase = isLightMode ? JSON.parse(JSON.stringify(chatbotLightTheme)) : JSON.parse(JSON.stringify(chatbotDarkTheme));
-            const langStrings = chatbotTranslations[currentLanguage] || chatbotTranslations['it']; // Default to Italian if language not found
+            const langStrings = chatbotTranslations[currentLanguage] || chatbotTranslations['it'];
 
-            // Merge Language Strings
             visualThemeBase.chatWindow.title = langStrings.title;
             visualThemeBase.chatWindow.welcomeMessage = langStrings.welcomeMessage;
             visualThemeBase.chatWindow.errorMessage = langStrings.errorMessage;
             visualThemeBase.chatWindow.sourceDocsTitle = langStrings.sourceDocsTitle;
             visualThemeBase.chatWindow.textInput.placeholder = langStrings.placeholder;
-            if (visualThemeBase.tooltip) { visualThemeBase.tooltip.tooltipMessage = langStrings.tooltipMessage; }
+            if (visualThemeBase.tooltip) { visualThemeBase.tooltipMessage = langStrings.tooltipMessage; }
 
-            // Remove starter prompts
+
             delete visualThemeBase.chatWindow.starterPrompts;
 
             try {
@@ -694,12 +776,10 @@
             } catch (e) { console.error("Error initializing Flowise Chatbot:", e); }
         }
 
-        // --- Load Flowise and Initialize --- (unchanged)
         import("https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js")
           .then((module) => { ChatbotInstance = module.default; initializeChatbot(); })
           .catch(err => console.error("Failed to load Flowise module:", err));
 
-        // --- Event Listeners and Setup ---
         document.addEventListener('DOMContentLoaded', function() {
             const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
             const siteHeader = document.querySelector('.site-header');
@@ -708,18 +788,30 @@
             const darkModeToggle = document.getElementById('dark-mode-toggle');
             const body = document.body;
 
-            // Reads 'it' from the HTML tag now
             currentLanguage = document.documentElement.lang || 'it';
 
-            // --- Mobile Nav Toggle --- (unchanged)
-            if (mobileNavToggle && siteHeader && navLinksContainer) { mobileNavToggle.addEventListener('click', function() { siteHeader.classList.toggle('nav-open'); const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true'; mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded)); }); }
+            if (mobileNavToggle && siteHeader && navLinksContainer) {
+                mobileNavToggle.addEventListener('click', function() {
+                    siteHeader.classList.toggle('nav-open');
+                    const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+                    mobileNavToggle.setAttribute('aria-expanded', String(!isExpanded));
+                });
+            }
             const allNavLinks = document.querySelectorAll('.nav-links a, .nav-links button');
-            allNavLinks.forEach(link => { link.addEventListener('click', function(e) { if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) { if (siteHeader.classList.contains('nav-open')) { siteHeader.classList.remove('nav-open'); mobileNavToggle.setAttribute('aria-expanded', 'false'); } } else if (this.tagName === 'A' && !this.getAttribute('href').startsWith('#')) { } else if (this.tagName === 'BUTTON' && siteHeader.classList.contains('nav-open')) { } }); });
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                        if (siteHeader.classList.contains('nav-open')) {
+                            siteHeader.classList.remove('nav-open');
+                            mobileNavToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            });
 
             setupIntersectionObserver();
             setupSmoothScroll();
 
-            // --- Theme Toggle --- (unchanged logic)
             body.classList.remove('light-mode');
             darkModeToggle.textContent = '☀️';
             darkModeToggle.setAttribute('aria-label', 'Switch to Light Mode');
@@ -731,21 +823,18 @@
                 initializeChatbot();
             });
 
-            // --- Site Translation ---
             function applySiteTranslations() {
                 document.querySelectorAll('[data-lang-key]').forEach(element => {
                     const key = element.getAttribute('data-lang-key');
-                    // Use Italian as fallback if English is selected but key missing
+                   
                     const translation = siteTranslations[currentLanguage]?.[key] || siteTranslations['it']?.[key];
                     if (translation) { element.innerHTML = translation; }
                 });
                 document.documentElement.lang = currentLanguage;
-                // Update button text and aria-label based on the *new* current language
                 translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
                 translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
             }
 
-            // Set initial button state (will be 'EN' because currentLanguage starts as 'it')
             translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
             translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
 
@@ -755,12 +844,10 @@
                 initializeChatbot();
             });
 
-            // Apply initial site translations (this will run because lang is 'it')
-            applySiteTranslations(); // No need for the if condition anymore
+            applySiteTranslations();
 
-        }); // End DOMContentLoaded
+        });
 
-        // --- Function Definitions (Outside DOMContentLoaded) --- (unchanged)
         function setupIntersectionObserver() { const animatedElements = document.querySelectorAll('.animate-on-scroll'); const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 }; const observerCallback = (entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }); }; const observer = new IntersectionObserver(observerCallback, observerOptions); animatedElements.forEach(element => observer.observe(element)); }
         function setupSmoothScroll() { document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const targetId = this.getAttribute('href'); if (targetId === '#' || !targetId) return; try { const targetElement = document.querySelector(targetId); if (targetElement) { e.preventDefault(); targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } } catch (error) { console.error("Error finding or scrolling to element:", error); } }); }); }
 
