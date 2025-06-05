@@ -36,16 +36,7 @@
             --container-padding: 40px;
             --section-padding: 100px 0;
 
-            /* -- Chatbot Dark Theme Colors -- */
-            --chatbot-dark-bg: #18181b;
-            --chatbot-dark-text: rgba(255, 255, 255, 0.9);
-            --chatbot-dark-muted-text: rgba(255, 255, 255, 0.6);
-            --chatbot-dark-border: rgba(255, 255, 255, 0.1);
-            --chatbot-dark-bot-msg-bg: #27272a;
-            --chatbot-dark-bot-msg-text: var(--chatbot-dark-text);
-            --chatbot-dark-primary: var(--chatbot-dark-bot-msg-bg); /* Use bot msg bg */
-            --chatbot-dark-user-msg-text: #ffffff;
-            --chatbot-dark-input-bg: #000000;
+            /* Chatbot Dark Theme Colors - REMOVED */
         }
 
         /* --- Light Mode Variables --- */
@@ -66,16 +57,7 @@
             --about-img-filter: none;
             --animated-bg-opacity: 0.35;
 
-            /* -- Chatbot Light Theme Colors -- */
-            --chatbot-light-bg: #ffffff;
-            --chatbot-light-text: rgba(0, 0, 0, 0.9);
-            --chatbot-light-muted-text: rgba(0, 0, 0, 0.6);
-            --chatbot-light-border: rgba(0, 0, 0, 0.09);
-            --chatbot-light-bot-msg-bg: #f0f0f0;
-            --chatbot-light-bot-msg-text: var(--chatbot-light-text);
-            --chatbot-light-primary: var(--chatbot-light-bot-msg-bg); /* Use bot msg bg */
-            --chatbot-light-user-msg-text: #000000; /* Black text for contrast */
-            --chatbot-light-input-bg: #ffffff;
+            /* Chatbot Light Theme Colors - REMOVED */
 
             /* Specific Site Overrides for Light Mode */
             .cta-button { background-color: var(--accent-color); color: #ffffff; }
@@ -540,12 +522,13 @@
         </div>
     </footer>
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script>
+    <!-- Flowise embed script REMOVED -->
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script> -->
 
     <script>
         // --- START OF EMBEDDED JAVASCRIPT ---
 
-        let ChatbotInstance;
+        // ChatbotInstance variable REMOVED
         let currentLanguage = document.documentElement.lang || 'it';
 
         const siteTranslations = {
@@ -628,163 +611,16 @@
                 "footer.copyright": "© 2025 Riccardo Ponte. Tutti i diritti riservati."
             }
         };
-        const chatbotTranslations = {
-            en: {
-                title: 'Riccardo',
-                welcomeMessage: 'Welcome :)', // MODIFIED
-                placeholder: 'Ask me something...',
-                errorMessage: 'Sorry, an error occurred. Please try again.',
-                sourceDocsTitle: 'Sources:',
-                tooltipMessage: 'Let\'s talk👇'
-            },
-            it: {
-                title: 'Riccardo',
-                welcomeMessage: 'Benvenuto :)', // MODIFIED
-                placeholder: 'Chiedimi qualcosa...',
-                errorMessage: 'Spiacente, si è verificato un errore. Riprova.',
-                sourceDocsTitle: 'Fonti:',
-                tooltipMessage: 'Parliamo👇'
-            }
-        };
-
-        const chatbotBaseThemeSettings = {
-            button: {
-                right: 20,
-                bottom: 20,
-                size: 48,
-                dragAndDrop: false,
-                customIconSrc: 'https://i.postimg.cc/yx6bX5Cs/Bolla-di-parlare-con-stella.png',
-                autoWindowOpen: { autoOpen: false },
-                customStyles: {
-                    boxShadow: '0 0 20px rgba(129, 79, 255, 0.5), 0 0 30px rgba(49, 238, 51, 0.4), 0 0 40px rgba(255, 255, 255, 0.3)',
-                    background: 'conic-gradient(from 0deg at 50% 50%, rgba(129, 79, 255, 0.5), rgba(49, 238, 51, 0.4), rgba(255, 255, 255, 0.3), rgba(129, 79, 255, 0.5))',
-                    filter: 'blur(12px)',
-                }
-            },
-            tooltip: { showTooltip: true, tooltipBackgroundColor: '#000000', tooltipTextColor: '#ffffff', tooltipFontSize: 16 },
-            chatWindow: {
-                showTitle: true,
-                showAgentMessages: true,
-                titleAvatarSrc: 'https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg',
-                height: 450,
-                width: 350,
-                fontSize: 16,
-                starterPromptFontSize: 15,
-                clearChatOnReload: false,
-                renderHTML: true,
-                botMessage: {
-                    showAvatar: true,
-                    avatarSrc: 'https://i.postimg.cc/g0Zt3zMC/Immagine-Whats-App-2025-04-26-ore-19-08-49-294fd8f4.jpg'
-                },
-                userMessage: { showAvatar: true, avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png' },
-                textInput: { maxChars: 150, maxCharsWarningMessage: 'Character limit exceeded.', autoFocus: true, sendMessageSound: false, receiveMessageSound: false },
-                dateTimeToggle: { date: true, time: true },
-                footer: { text: 'Powered by', company: 'Riccardo', companyLink: 'https://www.linkedin.com/in/riccardo-giorgio-ponte-a5a528217' }
-            }
-        };
-        const chatbotDarkTheme = {
-            button: {
-                ...chatbotBaseThemeSettings.button,
-                backgroundColor: 'var(--chatbot-dark-primary)',
-                iconColor: 'var(--chatbot-dark-user-msg-text)',
-            },
-            tooltip: chatbotBaseThemeSettings.tooltip,
-            chatWindow: {
-                ...chatbotBaseThemeSettings.chatWindow,
-                backgroundColor: 'var(--chatbot-dark-bg)',
-                botMessage: {
-                    ...chatbotBaseThemeSettings.chatWindow.botMessage,
-                    backgroundColor: 'var(--chatbot-dark-bot-msg-bg)',
-                    textColor: 'var(--chatbot-dark-bot-msg-text)',
-                },
-                userMessage: {
-                    ...chatbotBaseThemeSettings.chatWindow.userMessage,
-                    backgroundColor: 'var(--chatbot-dark-primary)',
-                    textColor: 'var(--chatbot-dark-user-msg-text)',
-                },
-                textInput: {
-                    ...chatbotBaseThemeSettings.chatWindow.textInput,
-                    backgroundColor: 'var(--chatbot-dark-input-bg)',
-                    textColor: 'var(--chatbot-dark-text)',
-                    sendButtonColor: 'var(--chatbot-dark-primary)',
-                },
-                feedback: { color: 'var(--chatbot-dark-muted-text)' },
-                footer: {
-                    ...chatbotBaseThemeSettings.chatWindow.footer,
-                    textColor: 'var(--chatbot-dark-muted-text)',
-                }
-            }
-        };
-        const chatbotLightTheme = {
-            button: {
-                ...chatbotBaseThemeSettings.button,
-                backgroundColor: 'var(--chatbot-light-primary)',
-                iconColor: 'var(--chatbot-light-user-msg-text)',
-            },
-            tooltip: chatbotBaseThemeSettings.tooltip,
-            chatWindow: {
-                ...chatbotBaseThemeSettings.chatWindow,
-                backgroundColor: 'var(--chatbot-light-bg)',
-                botMessage: {
-                    ...chatbotBaseThemeSettings.chatWindow.botMessage,
-                    backgroundColor: 'var(--chatbot-light-bot-msg-bg)',
-                    textColor: 'var(--chatbot-light-bot-msg-text)',
-                },
-                userMessage: {
-                    ...chatbotBaseThemeSettings.chatWindow.userMessage,
-                    backgroundColor: 'var(--chatbot-light-primary)',
-                    textColor: 'var(--chatbot-light-user-msg-text)',
-                },
-                textInput: {
-                    ...chatbotBaseThemeSettings.chatWindow.textInput,
-                    backgroundColor: 'var(--chatbot-light-input-bg)',
-                    textColor: 'var(--chatbot-light-text)',
-                    sendButtonColor: 'var(--chatbot-light-primary)',
-                },
-                feedback: { color: 'var(--chatbot-light-muted-text)' },
-                footer: {
-                    ...chatbotBaseThemeSettings.chatWindow.footer,
-                    textColor: 'var(--chatbot-light-muted-text)',
-                }
-            }
-        };
-
-        function initializeChatbot() {
-            if (!ChatbotInstance) { console.warn("Chatbot library not loaded yet."); return; }
-            const existingChatbotElement = document.querySelector('flowise-chatbot');
-            if (existingChatbotElement) { try { existingChatbotElement.remove(); } catch (e) { console.error("Error removing existing chatbot:", e); } }
-            const isLightMode = document.body.classList.contains('light-mode');
-            const visualThemeBase = isLightMode ? JSON.parse(JSON.stringify(chatbotLightTheme)) : JSON.parse(JSON.stringify(chatbotDarkTheme));
-            const langStrings = chatbotTranslations[currentLanguage] || chatbotTranslations['it'];
-
-            visualThemeBase.chatWindow.title = langStrings.title;
-            visualThemeBase.chatWindow.welcomeMessage = langStrings.welcomeMessage;
-            visualThemeBase.chatWindow.errorMessage = langStrings.errorMessage;
-            visualThemeBase.chatWindow.sourceDocsTitle = langStrings.sourceDocsTitle;
-            visualThemeBase.chatWindow.textInput.placeholder = langStrings.placeholder;
-            if (visualThemeBase.tooltip) { visualThemeBase.tooltipMessage = langStrings.tooltipMessage; }
-
-
-            delete visualThemeBase.chatWindow.starterPrompts;
-
-            try {
-                ChatbotInstance.init({
-                    chatflowid: "d72e7065-02bf-4761-864d-fe0d3d6c5774",
-                    apiHost: "https://cloud.flowiseai.com",
-                    theme: visualThemeBase
-                });
-            } catch (e) { console.error("Error initializing Flowise Chatbot:", e); }
-        }
-
-        import("https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js")
-          .then((module) => { ChatbotInstance = module.default; initializeChatbot(); })
-          .catch(err => console.error("Failed to load Flowise module:", err));
+        // chatbotTranslations object REMOVED
+        // chatbotBaseThemeSettings, chatbotDarkTheme, chatbotLightTheme objects REMOVED
+        // initializeChatbot function REMOVED
+        // Flowise embed import REMOVED
 
         document.addEventListener('DOMContentLoaded', function() {
             const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
             const siteHeader = document.querySelector('.site-header');
             const navLinksContainer = document.querySelector('.nav-links');
-            const translateButton = document.getElementById('translate-button');
+            const translateButton = document.getElementById('translate-button'); // This will be null as 'translate-button' ID is not in HTML
             const darkModeToggle = document.getElementById('dark-mode-toggle');
             const body = document.body;
 
@@ -820,7 +656,7 @@
                 const isLightMode = body.classList.contains('light-mode');
                 darkModeToggle.textContent = isLightMode ? '🌙' : '☀️';
                 darkModeToggle.setAttribute('aria-label', isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode');
-                initializeChatbot();
+                // initializeChatbot(); // Call REMOVED
             });
 
             function applySiteTranslations() {
@@ -831,18 +667,28 @@
                     if (translation) { element.innerHTML = translation; }
                 });
                 document.documentElement.lang = currentLanguage;
+                
+                // The following lines might cause an error if 'translate-button' element is not found.
+                // This is a pre-existing condition in the script if the button isn't in the HTML.
+                if (translateButton) {
+                    translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
+                    translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
+                }
+            }
+            
+            if (translateButton) {
                 translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
                 translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
+
+                translateButton.addEventListener('click', () => {
+                    currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
+                    applySiteTranslations();
+                    // initializeChatbot(); // Call REMOVED
+                });
+            } else {
+                // console.warn("Element with ID 'translate-button' not found. Language toggle UI will not be fully functional.");
             }
 
-            translateButton.textContent = currentLanguage === 'en' ? 'IT' : 'EN';
-            translateButton.setAttribute('aria-label', currentLanguage === 'en' ? 'Translate to Italian' : 'Translate to English');
-
-            translateButton.addEventListener('click', () => {
-                currentLanguage = currentLanguage === 'en' ? 'it' : 'en';
-                applySiteTranslations();
-                initializeChatbot();
-            });
 
             applySiteTranslations();
 
